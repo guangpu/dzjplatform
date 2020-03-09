@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/enterprise_folder"
+        android:icon="@drawable/selector_home_news"
+        android:title="技术资料"/>
+    <item
+        android:id="@+id/enterprise_share"
+        android:icon="@drawable/selector_enterprise_share"
+        android:title="内部共享"/>
+    <item
+        android:id="@+id/enterprise_folder_browse"
+        android:icon="@drawable/selector_home_message"
+        android:title="资料浏览"/>
+    <item
+        android:id="@+id/enterprise_share_browse"
+        android:icon="@drawable/selector_home_function"
+        android:title="共享浏览"/>
+
+</menu>

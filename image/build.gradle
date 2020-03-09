@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion compileVersion
+
+    defaultConfig {
+        minSdkVersion minVersion
+        targetSdkVersion targetVersion
+        // 混淆配置
+        consumerProguardFiles 'proguard-glide.pro'
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    //implementation "com.google.android.material:material:$materialVersion"
+
+    // 图片加载框架：https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+}

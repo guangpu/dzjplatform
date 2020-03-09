@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion compileVersion
+
+    defaultConfig {
+        minSdkVersion minVersion
+        targetSdkVersion targetVersion
+        // 混淆配置
+        consumerProguardFiles 'proguard-umeng.pro'
+
+        // 清单占位符
+        manifestPlaceholders = [
+                // 友盟 AppKey
+                "UMENG_APPKEY" : "5dd388754ca3578ab40003b9",
+                // QQ AppId
+                "QQ_APPID" : "100424468",
+                // QQ AppKey
+                "QQ_APPKEY" : "c7394704798a158208a74ab60104f0ba",
+                // 微信 AppId
+                "WX_APPID" : "wxdc1e388c3822c80b",
+                // 微信 AppKey
+                "WX_APPKEY" : "3baf1193c85774b3fd9d18447d76cab0"
+        ]
+    }
+}
+
+dependencies {
+    // 依赖 libs 目录下所有 Jar 包
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    // 谷歌 Support 包
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    // implementation "com.google.android.material:material:$materialVersion"
+}

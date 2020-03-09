@@ -1,0 +1,122 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hjq.umeng" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="17"
+6-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml
+7        android:targetSdkVersion="29" />
+7-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml
+8
+9    <!-- 共同权限 -->
+10    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+10-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:5:5-79
+10-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:5:22-76
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:6:5-67
+11-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+12-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:7:5-76
+12-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:7:22-73
+13
+14    <!-- 友盟统计 -->
+15    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+15-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:10:5-75
+15-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:10:22-72
+16
+17    <!-- 友盟社会化 -->
+18    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+18-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:13:5-81
+18-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:13:22-78
+19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+19-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:14:5-80
+19-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:14:22-77
+20
+21    <application>
+21-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:16:5-70:19
+22
+23        <!-- 友盟 Key（请在 Gradle 中配置，请不要在此处修改） -->
+24        <meta-data
+25            android:name="UMENG_APPKEY"
+25-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:20:13-40
+26            android:value="5dd388754ca3578ab40003b9" />
+26-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:21:13-44
+27
+28        <!-- QQ AppId（请在 Gradle 中配置，请不要在此处修改） -->
+29        <meta-data
+30            android:name="QQ_APPID"
+30-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:25:13-36
+31            android:value="100424468" />
+31-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:26:13-40
+32        <!-- QQ Key（请在 Gradle 中配置，请不要在此处修改） -->
+33        <meta-data
+34            android:name="QQ_APPKEY"
+34-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:29:13-37
+35            android:value="c7394704798a158208a74ab60104f0ba" />
+35-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:30:13-41
+36
+37        <!-- 微信 AppId（请在 Gradle 中配置，请不要在此处修改） -->
+38        <meta-data
+39            android:name="WX_APPID"
+39-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:34:13-36
+40            android:value="wxdc1e388c3822c80b" />
+40-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:35:13-40
+41        <!-- 微信 Key（请在 Gradle 中配置，请不要在此处修改） -->
+42        <meta-data
+43            android:name="WX_APPKEY"
+43-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:38:13-37
+44            android:value="3baf1193c85774b3fd9d18447d76cab0" />
+44-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:39:13-41
+45
+46        <!-- 友盟社会化 -->
+47
+48
+49        <!-- QQ 回调 -->
+50        <activity
+50-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:44:9-56:20
+51            android:name="com.tencent.tauth.AuthActivity"
+51-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:45:13-58
+52            android:launchMode="singleTask"
+52-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:46:13-44
+53            android:noHistory="true" >
+53-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:47:13-37
+54            <intent-filter>
+54-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:48:13-55:29
+55                <action android:name="android.intent.action.VIEW" />
+55-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:49:17-69
+55-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:49:25-66
+56
+57                <category android:name="android.intent.category.DEFAULT" />
+57-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:51:17-76
+57-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:51:27-73
+58                <category android:name="android.intent.category.BROWSABLE" />
+58-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:52:17-78
+58-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:52:27-75
+59
+60                <data android:scheme="tencent100424468" />
+60-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:54:23-58
+61            </intent-filter>
+62        </activity>
+63        <activity
+63-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:58:9-61:75
+64            android:name="com.tencent.connect.common.AssistActivity"
+64-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:59:13-69
+65            android:configChanges="orientation|keyboardHidden|screenSize"
+65-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:60:13-74
+66            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+66-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:61:13-72
+67
+68        <!-- 微信回调（请注意这个 Activity 放置的包名要和当前项目的包名保持一致，否则将不能正常回调） -->
+69        <activity
+69-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:64:9-68:75
+70            android:name="${applicationId}.wxapi.WXEntryActivity"
+70-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:65:13-66
+71            android:configChanges="keyboardHidden|orientation|screenSize"
+71-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:66:13-74
+72            android:exported="true"
+72-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:67:13-36
+73            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+73-->E:\Bitbucket\dzjplatform\umeng\src\main\AndroidManifest.xml:68:13-72
+74    </application>
+75
+76</manifest>

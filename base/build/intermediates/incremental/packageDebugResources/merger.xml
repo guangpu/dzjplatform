@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="E:\Bitbucket\dzjplatform\base\src\main\res"/><source path="E:\Bitbucket\dzjplatform\base\build\generated\res\rs\debug"/><source path="E:\Bitbucket\dzjplatform\base\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="E:\Bitbucket\dzjplatform\base\src\main\res"><file name="item_fall_down" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\item_fall_down.xml" qualifiers="" type="anim"/><file name="item_from_bottom" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\item_from_bottom.xml" qualifiers="" type="anim"/><file name="item_from_right" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\item_from_right.xml" qualifiers="" type="anim"/><file name="layout_fall_down" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\layout_fall_down.xml" qualifiers="" type="anim"/><file name="layout_from_bottom" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\layout_from_bottom.xml" qualifiers="" type="anim"/><file name="layout_from_right" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\layout_from_right.xml" qualifiers="" type="anim"/><file name="window_bottom_in" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_bottom_in.xml" qualifiers="" type="anim"/><file name="window_bottom_out" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_bottom_out.xml" qualifiers="" type="anim"/><file name="window_ios_in" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_ios_in.xml" qualifiers="" type="anim"/><file name="window_ios_out" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_ios_out.xml" qualifiers="" type="anim"/><file name="window_left_in" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_left_in.xml" qualifiers="" type="anim"/><file name="window_left_out" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_left_out.xml" qualifiers="" type="anim"/><file name="window_right_in" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_right_in.xml" qualifiers="" type="anim"/><file name="window_right_out" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_right_out.xml" qualifiers="" type="anim"/><file name="window_scale_in" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_scale_in.xml" qualifiers="" type="anim"/><file name="window_scale_out" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_scale_out.xml" qualifiers="" type="anim"/><file name="window_top_in" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_top_in.xml" qualifiers="" type="anim"/><file name="window_top_out" path="E:\Bitbucket\dzjplatform\base\src\main\res\anim\window_top_out.xml" qualifiers="" type="anim"/><file path="E:\Bitbucket\dzjplatform\base\src\main\res\values\colors.xml" qualifiers=""><color name="transparent">#00000000</color><color name="white">#FFFFFFFF</color><color name="white95">#F2FFFFFF</color><color name="white90">#E6FFFFFF</color><color name="white85">#D9FFFFFF</color><color name="white80">#CCFFFFFF</color><color name="white75">#BFFFFFFF</color><color name="white70">#B3FFFFFF</color><color name="white65">#A6FFFFFF</color><color name="white60">#99FFFFFF</color><color name="white55">#8CFFFFFF</color><color name="white50">#80FFFFFF</color><color name="white45">#73FFFFFF</color><color name="white40">#66FFFFFF</color><color name="white35">#59FFFFFF</color><color name="white30">#4DFFFFFF</color><color name="white25">#40FFFFFF</color><color name="white20">#33FFFFFF</color><color name="white15">#26FFFFFF</color><color name="white10">#1AFFFFFF</color><color name="white5">#0DFFFFFF</color><color name="black">#FF000000</color><color name="black95">#F2000000</color><color name="black90">#E6000000</color><color name="black85">#D9000000</color><color name="black80">#CC000000</color><color name="black75">#B000000F</color><color name="black70">#B3000000</color><color name="black65">#A6000000</color><color name="black60">#99000000</color><color name="black55">#8C000000</color><color name="black50">#80000000</color><color name="black45">#73000000</color><color name="black40">#66000000</color><color name="black35">#59000000</color><color name="black30">#4D000000</color><color name="black25">#40000000</color><color name="black20">#33000000</color><color name="black15">#26000000</color><color name="black10">#1A000000</color><color name="black5">#0D000000</color><color name="gray">#808080</color><color name="red">#FF0000</color><color name="gold">#FFD700</color><color name="yellow">#FFFF00</color><color name="green">#008000</color><color name="blue">#0000FF</color><color name="purple">#800080</color><color name="pink">#FFC0CB</color><color name="orange">#FFA500</color></file><file path="E:\Bitbucket\dzjplatform\base\src\main\res\values\integers.xml" qualifiers=""><integer name="anim_duration_medium">300</integer><integer name="anim_duration_long">400</integer></file><file path="E:\Bitbucket\dzjplatform\base\src\main\res\values\styles.xml" qualifiers=""><style name="BaseDialogStyle" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        
+        <item name="android:windowFrame">@null</item>
+        
+        <item name="android:windowIsFloating">true</item>
+        
+        <item name="android:windowIsTranslucent">true</item>
+        
+        <item name="android:windowBackground">@android:color/transparent</item>
+        
+        <item name="android:backgroundDimEnabled">true</item>
+        
+        <item name="android:windowNoTitle">true</item>
+        
+        <item name="android:windowEnterAnimation">@anim/window_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/window_scale_out</item>
+        
+        <item name="android:windowMinWidthMajor">0dp</item>
+        <item name="android:windowMinWidthMinor">0dp</item>
+        
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        
+        
+        
+        
+        
+        
+    </style><style name="ScaleAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/window_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/window_scale_out</item>
+    </style><style name="IOSAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/window_ios_in</item>
+        <item name="android:windowExitAnimation">@anim/window_ios_out</item>
+    </style><style name="TopAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/window_top_in</item>
+        <item name="android:windowExitAnimation">@anim/window_top_out</item>
+    </style><style name="BottomAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/window_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/window_bottom_out</item>
+    </style><style name="LeftAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/window_left_in</item>
+        <item name="android:windowExitAnimation">@anim/window_left_out</item>
+    </style><style name="RightAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/window_right_in</item>
+        <item name="android:windowExitAnimation">@anim/window_right_out</item>
+    </style></file></source><source path="E:\Bitbucket\dzjplatform\base\build\generated\res\rs\debug"/><source path="E:\Bitbucket\dzjplatform\base\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="E:\Bitbucket\dzjplatform\base\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="E:\Bitbucket\dzjplatform\base\src\debug\res"/></dataSet><mergedItems/></merger>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CircleCardViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="15dp"
+    tools:context=".ui.dialog.WaitDialog">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="220dp"
+        android:minHeight="110dp"
+
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <com.jingchengsoft.ykplatform.ui.widget.progress.NumberProgressBar
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/npb_progress"
+            app:progress_text_size="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.hjq.widget.view.SmartTextView
+            android:id="@+id/stv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:maxLines="3"
+            android:text="@string/common_loading"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
