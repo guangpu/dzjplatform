@@ -1,2 +1,2 @@
 rootProject.name='dzjplatform'
-include ':app', ':base', ':image', ':widget', ':umeng'
+include ':app', ':base', ':image', ':widget', ':umeng', ':spinner', ':tab'

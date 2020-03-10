@@ -109,8 +109,10 @@ attr alpha
 attr alphabeticModifiers
 attr animationMode
 attr appBarLayoutStyle
+attr arrowDrawable
 attr arrowHeadLength
 attr arrowShaftLength
+attr arrowTint
 attr autoCompleteTextViewStyle
 attr autoSizeMaxTextSize
 attr autoSizeMinTextSize
@@ -124,6 +126,7 @@ attr backgroundInsetEnd
 attr backgroundInsetStart
 attr backgroundInsetTop
 attr backgroundOverlayColorAlpha
+attr backgroundSelector
 attr backgroundSplit
 attr backgroundStacked
 attr backgroundTint
@@ -313,6 +316,7 @@ attr drawableTint
 attr drawableTintMode
 attr drawableTopCompat
 attr drawerArrowStyle
+attr dropDownListPaddingBottom
 attr dropDownListViewStyle
 attr dropdownListPreferredItemHeight
 attr editTextBackground
@@ -330,6 +334,7 @@ attr endIconTintMode
 attr enforceMaterialTheme
 attr enforceTextAppearance
 attr ensureMinTouchTargetSize
+attr entries
 attr errorEnabled
 attr errorIconDrawable
 attr errorIconTint
@@ -383,6 +388,7 @@ attr helperText
 attr helperTextEnabled
 attr helperTextTextAppearance
 attr helperTextTextColor
+attr hideArrow
 attr hideMotionSpec
 attr hideOnContentScroll
 attr hideOnScroll
@@ -521,6 +527,7 @@ attr passwordToggleEnabled
 attr passwordToggleTint
 attr passwordToggleTintMode
 attr popupMenuStyle
+attr popupTextAlignment
 attr popupTheme
 attr popupWindowStyle
 attr prefixText
@@ -662,6 +669,7 @@ attr textEndPadding
 attr textInputStyle
 attr textLocale
 attr textStartPadding
+attr textTint
 attr theme
 attr themeLineHeight
 attr thickness
@@ -836,6 +844,7 @@ color gray
 color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_gray
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1297,7 +1306,9 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen one_and_a_half_grid_unit
 dimen test_mtrl_calendar_day_cornerSize
+dimen three_grid_unit
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1392,6 +1403,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
 drawable btn_checkbox_checked_mtrl
@@ -1408,6 +1420,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable drop_down_shadow
+drawable ic_arrow_drop_down_black_24dp
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
@@ -1445,6 +1459,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable selector
+drawable spinner_drawable
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1675,6 +1691,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id text_input_end_icon
 id text_input_start_icon
+id text_view_spinner
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1814,6 +1831,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout spinner_list_item
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_design_checkbox
@@ -1855,6 +1873,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_content_description
@@ -2657,6 +2676,7 @@ styleable MenuGroup android_checkableBehavior android_enabled android_id android
 styleable MenuItem actionLayout actionProviderClass actionViewClass alphabeticModifiers android_alphabeticShortcut android_checkable android_checked android_enabled android_icon android_id android_menuCategory android_numericShortcut android_onClick android_orderInCategory android_title android_titleCondensed android_visible contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
 styleable MenuView android_headerBackground android_horizontalDivider android_itemBackground android_itemIconDisabledAlpha android_itemTextAppearance android_verticalDivider android_windowAnimationStyle preserveIconSpacing subMenuArrow
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconSize itemIconTint itemMaxLines itemShapeAppearance itemShapeAppearanceOverlay itemShapeFillColor itemShapeInsetBottom itemShapeInsetEnd itemShapeInsetStart itemShapeInsetTop itemTextAppearance itemTextColor menu
+styleable NiceSpinner arrowDrawable arrowTint backgroundSelector dropDownListPaddingBottom entries hideArrow popupTextAlignment textTint
 styleable PopupWindow android_popupAnimationStyle android_popupBackground overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RatioFrameLayout sizeRatio

@@ -108,8 +108,10 @@ int attr alpha 0x0
 int attr alphabeticModifiers 0x0
 int attr animationMode 0x0
 int attr appBarLayoutStyle 0x0
+int attr arrowDrawable 0x0
 int attr arrowHeadLength 0x0
 int attr arrowShaftLength 0x0
+int attr arrowTint 0x0
 int attr autoCompleteTextViewStyle 0x0
 int attr autoSizeMaxTextSize 0x0
 int attr autoSizeMinTextSize 0x0
@@ -123,6 +125,7 @@ int attr backgroundInsetEnd 0x0
 int attr backgroundInsetStart 0x0
 int attr backgroundInsetTop 0x0
 int attr backgroundOverlayColorAlpha 0x0
+int attr backgroundSelector 0x0
 int attr backgroundSplit 0x0
 int attr backgroundStacked 0x0
 int attr backgroundTint 0x0
@@ -312,6 +315,7 @@ int attr drawableTint 0x0
 int attr drawableTintMode 0x0
 int attr drawableTopCompat 0x0
 int attr drawerArrowStyle 0x0
+int attr dropDownListPaddingBottom 0x0
 int attr dropDownListViewStyle 0x0
 int attr dropdownListPreferredItemHeight 0x0
 int attr editTextBackground 0x0
@@ -329,6 +333,7 @@ int attr endIconTintMode 0x0
 int attr enforceMaterialTheme 0x0
 int attr enforceTextAppearance 0x0
 int attr ensureMinTouchTargetSize 0x0
+int attr entries 0x0
 int attr errorEnabled 0x0
 int attr errorIconDrawable 0x0
 int attr errorIconTint 0x0
@@ -382,6 +387,7 @@ int attr helperText 0x0
 int attr helperTextEnabled 0x0
 int attr helperTextTextAppearance 0x0
 int attr helperTextTextColor 0x0
+int attr hideArrow 0x0
 int attr hideMotionSpec 0x0
 int attr hideOnContentScroll 0x0
 int attr hideOnScroll 0x0
@@ -520,6 +526,7 @@ int attr passwordToggleEnabled 0x0
 int attr passwordToggleTint 0x0
 int attr passwordToggleTintMode 0x0
 int attr popupMenuStyle 0x0
+int attr popupTextAlignment 0x0
 int attr popupTheme 0x0
 int attr popupWindowStyle 0x0
 int attr prefixText 0x0
@@ -661,6 +668,7 @@ int attr textEndPadding 0x0
 int attr textInputStyle 0x0
 int attr textLocale 0x0
 int attr textStartPadding 0x0
+int attr textTint 0x0
 int attr theme 0x0
 int attr themeLineHeight 0x0
 int attr thickness 0x0
@@ -835,6 +843,7 @@ int color gray 0x0
 int color green 0x0
 int color highlighted_text_material_dark 0x0
 int color highlighted_text_material_light 0x0
+int color light_gray 0x0
 int color material_blue_grey_800 0x0
 int color material_blue_grey_900 0x0
 int color material_blue_grey_950 0x0
@@ -1296,7 +1305,9 @@ int dimen notification_small_icon_size_as_large 0x0
 int dimen notification_subtext_size 0x0
 int dimen notification_top_pad 0x0
 int dimen notification_top_pad_large_text 0x0
+int dimen one_and_a_half_grid_unit 0x0
 int dimen test_mtrl_calendar_day_cornerSize 0x0
+int dimen three_grid_unit 0x0
 int dimen tooltip_corner_radius 0x0
 int dimen tooltip_horizontal_padding 0x0
 int dimen tooltip_margin 0x0
@@ -1391,6 +1402,7 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x0
 int drawable abc_textfield_search_default_mtrl_alpha 0x0
 int drawable abc_textfield_search_material 0x0
 int drawable abc_vector_test 0x0
+int drawable arrow 0x0
 int drawable avd_hide_password 0x0
 int drawable avd_show_password 0x0
 int drawable btn_checkbox_checked_mtrl 0x0
@@ -1407,6 +1419,8 @@ int drawable design_ic_visibility 0x0
 int drawable design_ic_visibility_off 0x0
 int drawable design_password_eye 0x0
 int drawable design_snackbar_background 0x0
+int drawable drop_down_shadow 0x0
+int drawable ic_arrow_drop_down_black_24dp 0x0
 int drawable ic_calendar_black_24dp 0x0
 int drawable ic_clear_black_24dp 0x0
 int drawable ic_edit_black_24dp 0x0
@@ -1444,6 +1458,8 @@ int drawable notification_template_icon_bg 0x0
 int drawable notification_template_icon_low_bg 0x0
 int drawable notification_tile_bg 0x0
 int drawable notify_panel_notification_icon_bg 0x0
+int drawable selector 0x0
+int drawable spinner_drawable 0x0
 int drawable test_custom_background 0x0
 int drawable tooltip_frame_dark 0x0
 int drawable tooltip_frame_light 0x0
@@ -1674,6 +1690,7 @@ int id textSpacerNoButtons 0x0
 int id textSpacerNoTitle 0x0
 int id text_input_end_icon 0x0
 int id text_input_start_icon 0x0
+int id text_view_spinner 0x0
 int id textinput_counter 0x0
 int id textinput_error 0x0
 int id textinput_helper_text 0x0
@@ -1813,6 +1830,7 @@ int layout notification_template_part_time 0x0
 int layout select_dialog_item_material 0x0
 int layout select_dialog_multichoice_material 0x0
 int layout select_dialog_singlechoice_material 0x0
+int layout spinner_list_item 0x0
 int layout support_simple_spinner_dropdown_item 0x0
 int layout test_action_chip 0x0
 int layout test_design_checkbox 0x0
@@ -1854,6 +1872,7 @@ int string abc_searchview_description_voice 0x0
 int string abc_shareactionprovider_share_with 0x0
 int string abc_shareactionprovider_share_with_application 0x0
 int string abc_toolbar_collapse_description 0x0
+int string app_name 0x0
 int string appbar_scrolling_view_behavior 0x0
 int string bottom_sheet_behavior 0x0
 int string character_counter_content_description 0x0
@@ -3234,6 +3253,15 @@ int styleable NavigationView_itemShapeInsetTop 17
 int styleable NavigationView_itemTextAppearance 18
 int styleable NavigationView_itemTextColor 19
 int styleable NavigationView_menu 20
+int[] styleable NiceSpinner { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int styleable NiceSpinner_arrowDrawable 0
+int styleable NiceSpinner_arrowTint 1
+int styleable NiceSpinner_backgroundSelector 2
+int styleable NiceSpinner_dropDownListPaddingBottom 3
+int styleable NiceSpinner_entries 4
+int styleable NiceSpinner_hideArrow 5
+int styleable NiceSpinner_popupTextAlignment 6
+int styleable NiceSpinner_textTint 7
 int[] styleable PopupWindow { 0x10102c9, 0x1010176, 0x0 }
 int styleable PopupWindow_android_popupAnimationStyle 0
 int styleable PopupWindow_android_popupBackground 1

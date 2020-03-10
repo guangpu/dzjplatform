@@ -18,6 +18,8 @@ import com.hjq.toast.ToastUtils;
 import com.jingchengsoft.dzjplatform.other.AppConfig;
 import com.jingchengsoft.dzjplatform.other.StatusManager;
 
+import butterknife.ButterKnife;
+
 /**
  *    author : Android 轮子哥
  *    github : https://github.com/getActivity/AndroidProject
@@ -41,7 +43,7 @@ public abstract class MyFragment<A extends MyActivity> extends BaseFragment<A>
 
     @Override
     protected void initFragment() {
-//        ButterKnife.bind(this, getView());
+        ButterKnife.bind(this, getView());
 
         if (getTitleId() > 0) {
             // 勤快模式

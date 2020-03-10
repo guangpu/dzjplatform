@@ -3,8 +3,11 @@ package com.jingchengsoft.dzjplatform.feature.login
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.text.SpannableString
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import com.alibaba.fastjson.JSON
+import com.alibaba.fastjson.JSONObject
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.StringUtils
@@ -14,6 +17,7 @@ import com.hjq.umeng.UmengClient
 import com.hjq.umeng.UmengLogin
 import com.jingchengsoft.dzjplatform.R
 import com.jingchengsoft.dzjplatform.common.MyActivity
+import com.jingchengsoft.dzjplatform.feature.common.entity.Company
 import com.jingchengsoft.dzjplatform.feature.home.HomeActivity
 import com.jingchengsoft.dzjplatform.http.ApiResponse
 import com.jingchengsoft.dzjplatform.http.CommonException
@@ -24,6 +28,8 @@ import com.jingchengsoft.dzjplatform.sp.SpUser
 import com.jingchengsoft.dzjplatform.ui.dialog.WaitDialog
 import com.zhouyou.http.EasyHttp
 import kotlinx.android.synthetic.main.activity_login.*
+import org.angmarch.views.OnSpinnerItemSelectedListener
+import org.angmarch.views.SpinnerTextFormatter
 
 
 /**
@@ -40,6 +46,8 @@ class LoginActivity : MyActivity(), UmengLogin.OnLoginListener,
     private val mLogoScale = 0.8f
     /** 动画时间  */
     private val mAnimTime = 300
+
+    private var companyCode = "";
 
     override fun getLayoutId(): Int {
         return R.layout.activity_login
@@ -86,6 +94,19 @@ class LoginActivity : MyActivity(), UmengLogin.OnLoginListener,
         if (iv_login_qq.visibility == View.GONE && iv_login_wx.visibility == View.GONE) {
             ll_login_other.visibility = View.GONE
         }
+
+        var comList: MutableList<Company> = Company.defaultList()
+        companyCode = comList[0].code
+        val comTextFormatter: SpinnerTextFormatter<Company> = SpinnerTextFormatter<Company> { item -> SpannableString(item.getName()) }
+
+        val comClickListener = OnSpinnerItemSelectedListener { parent, view, position, id ->
+            companyCode = comList[position].code
+        }
+
+        spn_com.setSpinnerTextFormatter(comTextFormatter)
+        spn_com.setSelectedTextFormatter(comTextFormatter)
+        spn_com.setOnSpinnerItemSelectedListener(comClickListener)
+        spn_com.attachDataSource(comList)
     }
 
 //    override fun onRightClick(v: View) {
@@ -157,17 +178,19 @@ class LoginActivity : MyActivity(), UmengLogin.OnLoginListener,
         }
         val dialog = WaitDialog.Builder(this)
             .show()
-        EasyHttp.get("apiLogin")
+        EasyHttp.post(HttpConfig.LOGIN)
             .baseUrl(HttpConfig.BASE_URL)
-            .params("username", username)
-            .params("password1", pwd)
+            .params("sysusername", username)
+            .params("sysuserpwd", pwd)
+            .params("minecode", companyCode)
             .execute(object : PretreatmentCallback<String>() {
                 override fun onResponse(response: ApiResponse) {
                     LogUtils.i("token：" + response.data)
                     if (response.isOk) {
                         SpUser.username = username
                         SpUser.pwd = pwd
-                        SpUser.token = response.data
+                        var data:JSONObject = JSON.parseObject(response.data)
+                        SpUser.token = data.getString("token")
                         postDelayed(
                             {
 

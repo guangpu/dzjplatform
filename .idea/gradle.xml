@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/image" />
+            <option value="$PROJECT_DIR$/spinner" />
+            <option value="$PROJECT_DIR$/tab" />
             <option value="$PROJECT_DIR$/umeng" />
             <option value="$PROJECT_DIR$/widget" />
           </set>

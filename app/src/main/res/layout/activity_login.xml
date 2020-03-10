@@ -32,6 +32,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/spn_com"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="28dp"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:tooltipText="选择煤矿单位" />
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp" />
+
         <com.hjq.widget.view.ClearEditText
             android:id="@+id/et_login_user"
             style="@style/EditTextStyle"

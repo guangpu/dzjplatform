@@ -20,4 +20,5 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
     implementation "com.google.android.material:material:$materialVersion"
+    implementation project(path: ':spinner')
 }

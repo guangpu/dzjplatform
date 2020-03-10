@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".common.copy.CopyActivity">
+
+    <com.hjq.bar.TitleBar
+        style="@style/TitleBarStyleBlueBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backButton="false"
+        app:title="我的">
+
+    </com.hjq.bar.TitleBar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_person_data_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:bar_leftText="@string/personal_data_address"
+                app:bar_rightHint="@string/personal_data_address_hint"
+                app:bar_rightText="山东省济南市高新区" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_person_data_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="@string/personal_data_name"
+                app:bar_rightText="煤炭地质总局" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_person_data_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:bar_leftText="@string/personal_data_id"
+                app:bar_rightText="880634" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_person_data_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:bar_leftText="@string/personal_data_phone" />
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_person_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:bar_leftText="@string/personal_data_version" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_me_exit"
+        style="@style/ButtonStyleRed"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出" />
+</LinearLayout>

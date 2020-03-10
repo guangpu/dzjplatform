@@ -9,7 +9,6 @@ import com.alibaba.fastjson.annotation.JSONField;
  */
 public class ApiResponse {
     private int code;
-    @JSONField(name = "message")
     private String msg;
     private String data;
 
@@ -38,7 +37,7 @@ public class ApiResponse {
     }
 
     public boolean isOk() {
-        return code == 200;
+        return code == 0;
     }
 
     @Override
