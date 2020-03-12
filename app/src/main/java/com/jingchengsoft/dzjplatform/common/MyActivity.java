@@ -163,6 +163,13 @@ public abstract class MyActivity extends BaseActivity
         super.setTitle(title);
         if (mTitleBar != null) {
             mTitleBar.setTitle(title);
+            setLeftIcon();
+        }
+    }
+
+    public void setLeftIcon() {
+        if(mTitleBar != null) {
+
         }
     }
 

@@ -126,7 +126,7 @@
     <!-- 上拉刷新下拉加载样式 -->
     <style name="TitleBarStyleBlueBackground">
         <item name="titleColor">@color/white</item>
-        <item name="android:background">@color/colorTittle</item>
+        <item name="android:background">@color/colorTitle</item>
     </style>
 
     <!--进度条-->

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/item_grid_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/video_mark"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@color/colorRiskRed"
+        android:visibility="gone" />
+</RelativeLayout>

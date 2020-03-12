@@ -22,7 +22,6 @@ public final class CopyActivity extends MyActivity {
     @Override
     protected void initView() {
         getWindow().getDecorView().setSystemUiVisibility(getWindow().getDecorView().getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-
     }
 
     @Override

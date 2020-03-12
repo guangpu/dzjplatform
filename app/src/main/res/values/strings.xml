@@ -88,8 +88,7 @@
     <!-- 主页 -->
     <string name="home_exit_hint">再按一次退出</string>
     <string name="home_nav_message">消息</string>
-    <string name="home_nav_news">安全法宝</string>
-    <string name="home_nav_function">功能</string>
+    <string name="home_nav_function">工作台</string>
     <string name="home_nav_address_book">通讯录</string>
     <string name="home_nav_me">我的</string>
 
@@ -189,8 +188,5 @@
 
     <string name="photo_launch_fail">无法启动相机</string>
     <string name="photo_picture_error">图片错误</string>
-
-    <!-- 三减三提 -->
-    <string name="sjst">三减三提</string>
 
 </resources>

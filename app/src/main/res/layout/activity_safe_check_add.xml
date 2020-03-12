@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightColor="@color/colorTitle"
+        app:rightTitle="问题清单"
+        app:title="新增" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_project_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="项目名称"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_check_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="检查日期"
+                app:bar_rightText="2020-03-12" />
+
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_check_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="检查负责人"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_check_accompany_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_leftText="参检人员"
+                app:bar_rightText="" />
+
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_hidden_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:bar_leftText="检查内容"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_rectification_time_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="整改期限"
+                app:bar_rightText="2020-03-12" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_responsible_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="整改负责人"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_hidden_input_sure"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确认" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_hidden_input_cancel"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="取消" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

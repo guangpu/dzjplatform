@@ -20,10 +20,12 @@
     <!-- 对话框取消按钮文本颜色 -->
     <color name="colorCancel">#F44336</color>
     <!-- 标题 -->
-    <color name="colorTittle">#1296db</color>
+    <color name="colorTitle">#1296db</color>
 
     <!-- 图表 -->
     <color name="colorLinePlan">#36cfc9</color>
     <color name="colorLineActual">#ffc069</color>
+
+    <color name="colorRiskRed">#fa0606</color>
 
 </resources>

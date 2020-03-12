@@ -10,8 +10,10 @@ import com.hjq.base.BaseFragmentAdapter
 import com.jingchengsoft.dzjplatform.R
 import com.jingchengsoft.dzjplatform.common.MyActivity
 import com.jingchengsoft.dzjplatform.common.MyFragment
+import com.jingchengsoft.dzjplatform.feature.home.addressbook.AddressBookFragment
 import com.jingchengsoft.dzjplatform.feature.home.function.FunctionFragment
 import com.jingchengsoft.dzjplatform.feature.home.me.MeFragment
+import com.jingchengsoft.dzjplatform.feature.home.message.MessageFragment
 import com.jingchengsoft.dzjplatform.helper.ActivityStackManager
 import com.jingchengsoft.dzjplatform.helper.DoubleClickHelper
 import com.jingchengsoft.dzjplatform.other.KeyboardWatcher
@@ -52,14 +54,13 @@ class HomeActivity : MyActivity(),
 
     override fun initData() {
         mPagerAdapter = BaseFragmentAdapter(this)
-//        mPagerAdapter.addFragment(MessageFragment.newInstance())
-//        mPagerAdapter.addFragment(NewsFragment.newInstance())
+        mPagerAdapter.addFragment(MessageFragment.newInstance())
         mPagerAdapter.addFragment(FunctionFragment.newInstance())
-//        mPagerAdapter.addFragment(AddressBookFragment.newInstance())
+        mPagerAdapter.addFragment(AddressBookFragment.newInstance())
         mPagerAdapter.addFragment(MeFragment.newInstance())
 //
         vp_home_pager.adapter = mPagerAdapter
-        vp_home_pager.currentItem = 2
+        vp_home_pager.currentItem = 1
         // 限制页面数量
         vp_home_pager.offscreenPageLimit = mPagerAdapter.count
 
@@ -75,31 +76,26 @@ class HomeActivity : MyActivity(),
     override fun onPageSelected(position: Int) {
         when (position) {
             0 -> bv_home_navigation.selectedItemId = R.id.home_message
-            1 -> bv_home_navigation.selectedItemId = R.id.home_news
-            2 -> bv_home_navigation.selectedItemId = R.id.home_function
-            3 -> bv_home_navigation.selectedItemId = R.id.home_address_book
-            4 -> bv_home_navigation.selectedItemId = R.id.home_me
+            1 -> bv_home_navigation.selectedItemId = R.id.home_function
+            2 -> bv_home_navigation.selectedItemId = R.id.home_address_book
+            3 -> bv_home_navigation.selectedItemId = R.id.home_me
         }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-//            R.id.home_message -> {
-//                mPagerAdapter.setCurrentItem(MessageFragment::class.java)
-//                return true
-//            }
-//            R.id.home_news -> {
-//                mPagerAdapter.setCurrentItem(NewsFragment::class.java)
-//                return true
-//            }
+            R.id.home_message -> {
+                mPagerAdapter.setCurrentItem(MessageFragment::class.java)
+                return true
+            }
             R.id.home_function -> {
                 mPagerAdapter.setCurrentItem(FunctionFragment::class.java)
                 return true
             }
-//            R.id.home_address_book -> {
-//                mPagerAdapter.setCurrentItem(AddressBookFragment::class.java)
-//                return true
-//            }
+            R.id.home_address_book -> {
+                mPagerAdapter.setCurrentItem(AddressBookFragment::class.java)
+                return true
+            }
             R.id.home_me -> {
                 mPagerAdapter.setCurrentItem(MeFragment::class.java)
                 return true

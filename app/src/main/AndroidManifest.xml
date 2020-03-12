@@ -39,14 +39,8 @@
             android:name=".feature.splash.SplashActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-            <!-- 程序入口 -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
+            android:screenOrientation="fullSensor">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <!-- App 首页 -->
@@ -55,7 +49,7 @@
             android:alwaysRetainTaskState="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="fullSensor" >
         </activity>
 
         <!--登陆-->
@@ -63,7 +57,46 @@
             android:name=".feature.login.LoginActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--隐患排查-->
+        <activity
+            android:name=".feature.home.function.hiddencheck.activity.HiddenCheckActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--安全专项检查添加-->
+        <activity
+            android:name=".feature.home.function.hiddencheck.activity.SafeCheckAddActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--安全检查问题添加-->
+        <activity
+            android:name=".feature.home.function.hiddencheck.activity.HiddenCheckQuestionAddActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+            <!-- 程序入口 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--图片预览-->
+        <activity
+            android:name=".feature.common.activity.ImageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
         </activity>
     </application>
 

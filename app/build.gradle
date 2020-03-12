@@ -116,7 +116,7 @@ dependencies {
     // 自定义 View
     implementation project(':widget')
     // Glide 隔离
-    implementation project(':image')
+    //implementation project(':image')
 
     // ButterKnife 注解库：https://github.com/JakeWharton/butterknife
     if (project.hasProperty('android.injected.invoked.from.ide')) {
@@ -189,6 +189,9 @@ dependencies {
     //悬浮菜单：https://github.com/JavaNoober/FloatMenu
     implementation 'com.noober.floatmenu:common:1.0.4'
 
+    // 图片选择框架：https://github.com/HuanTanSheng/EasyPhotos
+    implementation 'com.github.HuanTanSheng:EasyPhotos:3.0.4'
+
     //下拉框控件：https://github.com/arcadefire/nice-spinner
     //implementation 'com.github.arcadefire:nice-spinner:1.4.3'
 
@@ -206,10 +209,14 @@ dependencies {
     implementation 'net.danlew:android.joda:2.10.3'
     implementation project(path: ':base')
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation project(path: ':image')
     implementation 'com.google.android.material:material:1.1.0'
+    implementation project(path: ':image')
     implementation project(path: ':umeng')
     implementation project(path: ':spinner')
+    implementation project(path: ':tab')
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
 //    implementation 'com.android.support:support-v4:23.1.1'
 //    implementation 'com.nineoldandroids:library:2.4.0'

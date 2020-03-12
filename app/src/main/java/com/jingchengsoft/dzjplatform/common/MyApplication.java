@@ -72,10 +72,10 @@ public final class MyApplication extends Application {
                 return new ColorDrawable(getColor(R.color.colorPrimary));
             }
 
-            @Override
-            public Drawable getBackIcon() {
-                return getDrawable(R.drawable.ic_back_black);
-            }
+//            @Override
+//            public Drawable getBackIcon() {
+//                return getDrawable(R.drawable.ic_back_black);
+//            }
         });
 
         // 图片加载器
