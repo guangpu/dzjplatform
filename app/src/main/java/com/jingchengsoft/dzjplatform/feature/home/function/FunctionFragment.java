@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyFragment;
 import com.jingchengsoft.dzjplatform.feature.home.HomeActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.DeviceManageActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.HiddenCheckActivity;
 
 import java.util.ArrayList;
@@ -72,6 +73,9 @@ public class FunctionFragment extends MyFragment<HomeActivity> {
                     case "隐患排查":
                         HiddenCheckActivity.start();
                         break;
+                    case "设备管理":
+                        DeviceManageActivity.start();
+                        break;
                 }
             }
         });
@@ -94,7 +98,7 @@ public class FunctionFragment extends MyFragment<HomeActivity> {
         ItemFunctionEntity item2 = new ItemFunctionEntity();
         item2.setType(ItemFunctionEntity.Type.TypeFunction);
         item2.setName("风险管控");
-        item2.setIcon(R.drawable.ic_f_bbs);
+        item2.setIcon(R.drawable.ic_f_danger);
         dataList.add(item2);
 
         ItemFunctionEntity item3 = new ItemFunctionEntity();
@@ -106,13 +110,13 @@ public class FunctionFragment extends MyFragment<HomeActivity> {
         ItemFunctionEntity item4 = new ItemFunctionEntity();
         item4.setType(ItemFunctionEntity.Type.TypeFunction);
         item4.setName("教育培训");
-        item4.setIcon(R.drawable.ic_f_journal);
+        item4.setIcon(R.drawable.ic_f_train);
         dataList.add(item4);
 
         ItemFunctionEntity item5 = new ItemFunctionEntity();
         item5.setType(ItemFunctionEntity.Type.TypeFunction);
         item5.setName("设备管理");
-        item5.setIcon(R.drawable.ic_f_e_date);
+        item5.setIcon(R.drawable.ic_f_device);
         dataList.add(item5);
 
         ItemFunctionEntity item6 = new ItemFunctionEntity();

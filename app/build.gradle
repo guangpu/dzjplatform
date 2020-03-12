@@ -174,8 +174,8 @@ dependencies {
     //阿里巴巴fastjson：https://github.com/alibaba/fastjson
     implementation 'com.alibaba:fastjson:1.1.71.android'
 
-    //万能适配器 https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/README-cn.md
-    //implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
+    //万能适配器 https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/readme/0-BaseRecyclerViewAdapterHelper.md
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.1'
 
     //上拉刷新下拉加载：https://github.com/scwang90/SmartRefreshLayout
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'

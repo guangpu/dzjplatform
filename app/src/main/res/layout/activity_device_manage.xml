@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tl="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,30 +13,37 @@
         android:layout_height="wrap_content"
         app:rightColor="@color/colorTitle"
         app:rightTitle="新增"
-        app:title="隐患排查" />
+        app:title="设备巡检" />
 
-    <com.flyco.tablayout.SlidingTabLayout
-        android:id="@+id/tab"
+    <com.jingchengsoft.dzjplatform.ui.widget.HintLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/colorTitle"
-        tl:tl_divider_color="#1AFFFFFF"
-        tl:tl_divider_padding="13dp"
-        tl:tl_divider_width="1dp"
-        tl:tl_indicator_color="#FFFFFF"
-        tl:tl_indicator_height="1.5dp"
-        tl:tl_indicator_width_equal_title="true"
-        tl:tl_tab_padding="22dp"
-        tl:tl_tab_space_equal="true"
-        tl:tl_textSelectColor="#FFFFFF"
-        tl:tl_textUnselectColor="#66FFFFFF"
-        tl:tl_underline_color="#1AFFFFFF"
-        tl:tl_underline_height="1dp"/>
+        android:layout_height="match_parent">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vp_home_pager"
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1" />
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/srl_check"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlAccentColor="@android:color/white"
+            app:srlPrimaryColor="#029FF1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </com.jingchengsoft.dzjplatform.ui.widget.HintLayout>
 
 </LinearLayout>

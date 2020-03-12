@@ -1,6 +1,7 @@
 package com.jingchengsoft.dzjplatform.feature.home.function.devicemanage;
 
 import com.blankj.utilcode.util.ActivityUtils;
+import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 
 /**
@@ -15,7 +16,7 @@ public class DeviceManageActivity extends MyActivity {
 
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.activity_device_manage;
     }
 
     @Override
