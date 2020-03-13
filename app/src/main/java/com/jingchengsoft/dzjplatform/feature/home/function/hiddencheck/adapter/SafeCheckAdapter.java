@@ -1,15 +1,8 @@
 package com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.adapter;
 
-import android.content.Context;
-import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.jingchengsoft.dzjplatform.R;
-import com.jingchengsoft.dzjplatform.common.MyAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.SafeCheck;
 
 import org.jetbrains.annotations.NotNull;

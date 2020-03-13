@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".common.copy.CopyActivity">
+
+    <ImageView
+        android:id="@+id/ic_prj"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_prj"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ic_prj"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_project_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="京沪高速扩建工程（项目名称）"/>
+
+        <TextView
+            android:id="@+id/tv_check_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="2020/03/12"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_set"/>
+
+</RelativeLayout>

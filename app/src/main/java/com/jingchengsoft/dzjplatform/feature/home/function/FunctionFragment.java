@@ -8,6 +8,7 @@ import com.jingchengsoft.dzjplatform.common.MyFragment;
 import com.jingchengsoft.dzjplatform.feature.home.HomeActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.DeviceManageActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.HiddenCheckActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.activity.SpecialWorkActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +76,9 @@ public class FunctionFragment extends MyFragment<HomeActivity> {
                         break;
                     case "设备管理":
                         DeviceManageActivity.start();
+                        break;
+                    case "特种作业":
+                        SpecialWorkActivity.start();
                         break;
                 }
             }

@@ -78,7 +78,7 @@ public class SafeCheckFragment extends MyFragment<HiddenCheckActivity> {
      * 刷新列表
      */
     private void refresh() {
-        srl_check.setEnableLoadMore(true);
+
     }
 
     /**

@@ -12,6 +12,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.hjq.bar.OnTitleBarListener;
@@ -39,6 +40,8 @@ public abstract class MyActivity extends BaseActivity
     private TitleBar mTitleBar;
     /** 状态栏沉浸 */
     private ImmersionBar mImmersionBar;
+
+    public LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 
     /**
      * 获取标题栏 id

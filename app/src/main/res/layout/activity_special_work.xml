@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".feature.home.HomeActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightColor="@color/colorTitle"
+        app:rightTitle=""
+        app:title="特种作业人员清单" />
+
+    <com.jingchengsoft.dzjplatform.ui.widget.HintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/srl_special_work"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlAccentColor="@android:color/white"
+            app:srlPrimaryColor="#029FF1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_special_work"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </com.jingchengsoft.dzjplatform.ui.widget.HintLayout>
+
+</LinearLayout>

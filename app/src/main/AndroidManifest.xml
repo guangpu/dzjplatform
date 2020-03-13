@@ -40,13 +40,6 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTop"
             android:screenOrientation="fullSensor">
-            <!-- 程序入口 -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <!-- App 首页 -->
@@ -56,6 +49,14 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor" >
+            <!-- 程序入口 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
 
         <!--登陆-->
@@ -94,6 +95,22 @@
         <!--设备管理-->
         <activity
             android:name=".feature.home.function.devicemanage.DeviceManageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--特种作业人员-->
+        <activity
+            android:name=".feature.home.function.specialwork.activity.SpecialWorkActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--特种作业人员详情-->
+        <activity
+            android:name=".feature.home.function.specialwork.activity.SpecialWorkDetailActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor" >
