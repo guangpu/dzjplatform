@@ -5,10 +5,13 @@
 
     <!-- 外部存储读写权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- 拍照权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- 联网权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -94,7 +97,23 @@
 
         <!--设备管理-->
         <activity
-            android:name=".feature.home.function.devicemanage.DeviceManageActivity"
+            android:name=".feature.home.function.devicemanage.activity.DeviceManageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--添加设备巡检记录-->
+        <activity
+            android:name=".feature.home.function.devicemanage.activity.InspectionAddActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--二维码扫描-->
+        <activity
+            android:name=".feature.home.function.devicemanage.activity.CodeScanActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor" >
@@ -116,9 +135,49 @@
             android:screenOrientation="fullSensor" >
         </activity>
 
+        <!--知识库-->
+        <activity
+            android:name=".feature.home.function.knowledge.activity.KnowledgeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--入职三级培训-->
+        <activity
+            android:name=".feature.home.function.training.activity.TrainingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--入职三级培训人员详情-->
+        <activity
+            android:name=".feature.home.function.training.activity.TrainingDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
         <!--图片预览-->
         <activity
             android:name=".feature.common.activity.ImageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--应急管理-->
+        <activity
+            android:name=".feature.home.function.emergency.activity.EmergencyActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--风险管控-->
+        <activity
+            android:name=".feature.home.function.riskmanage.activity.RiskManageActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor" >

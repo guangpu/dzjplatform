@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    tools:context=".ui.dialog.CopyDialog">
+
+    <org.angmarch.views.NiceSpinner
+        android:id="@+id/ns_item"
+        android:layout_width="100dp"
+        android:layout_height="50dp" />
+
+    <com.hjq.widget.view.ClearEditText
+        android:id="@+id/cet_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_toLeftOf="@+id/btn_search"
+        android:layout_toRightOf="@+id/ns_item"
+        android:background="@color/white"
+        android:gravity="center_vertical" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_search"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="查询" />
+</RelativeLayout>

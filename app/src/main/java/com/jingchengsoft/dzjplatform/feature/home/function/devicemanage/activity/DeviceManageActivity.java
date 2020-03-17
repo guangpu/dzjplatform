@@ -1,4 +1,6 @@
-package com.jingchengsoft.dzjplatform.feature.home.function.devicemanage;
+package com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.activity;
+
+import android.view.View;
 
 import com.blankj.utilcode.util.ActivityUtils;
 import com.jingchengsoft.dzjplatform.R;
@@ -22,6 +24,11 @@ public class DeviceManageActivity extends MyActivity {
     @Override
     protected void initView() {
 
+    }
+
+    @Override
+    public void onRightClick(View v) {
+        InspectionAddActivity.start();
     }
 
     @Override

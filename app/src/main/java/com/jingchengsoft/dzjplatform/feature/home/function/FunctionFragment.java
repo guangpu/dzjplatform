@@ -6,9 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyFragment;
 import com.jingchengsoft.dzjplatform.feature.home.HomeActivity;
-import com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.DeviceManageActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.activity.DeviceManageActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.emergency.activity.EmergencyActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.HiddenCheckActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.knowledge.activity.KnowledgeActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.activity.RiskManageActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.activity.SpecialWorkActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.training.activity.TrainingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,6 +84,19 @@ public class FunctionFragment extends MyFragment<HomeActivity> {
                     case "特种作业":
                         SpecialWorkActivity.start();
                         break;
+                    case "知识库":
+                        KnowledgeActivity.start();
+                        break;
+                    case "教育培训":
+                        TrainingActivity.start();
+                        break;
+                    case "应急管理":
+                        EmergencyActivity.start();
+                        break;
+                    case "风险管控":
+                        RiskManageActivity.start();
+                        break;
+
                 }
             }
         });
@@ -141,11 +158,11 @@ public class FunctionFragment extends MyFragment<HomeActivity> {
         item8.setIcon(R.drawable.ic_f_journal);
         dataList.add(item8);
 
-        ItemFunctionEntity item9 = new ItemFunctionEntity();
-        item9.setType(ItemFunctionEntity.Type.TypeFunction);
-        item9.setName("统计分析");
-        item9.setIcon(R.drawable.ic_f_three);
-        dataList.add(item9);
+//        ItemFunctionEntity item9 = new ItemFunctionEntity();
+//        item9.setType(ItemFunctionEntity.Type.TypeFunction);
+//        item9.setName("统计分析");
+//        item9.setIcon(R.drawable.ic_f_three);
+//        dataList.add(item9);
 
         return dataList;
     }

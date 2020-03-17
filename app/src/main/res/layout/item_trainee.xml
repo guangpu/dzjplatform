@@ -20,18 +20,6 @@
             android:gravity="center_vertical"
             android:padding="5dp">
 
-
-            <ImageView
-                android:id="@+id/iv_photo"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/ic_person_male" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,22 +27,26 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_isworking"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tv_name"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="姓名" />
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/tv_person_name"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tv_id_card"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="" />
+                        android:layout_marginRight="0dp"
+                        android:layout_weight="2"
+                        android:text=""
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -66,10 +58,10 @@
                         android:id="@+id/tv_totallength"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="性别" />
+                        android:text="队级考核" />
 
                     <TextView
-                        android:id="@+id/tv_sex"
+                        android:id="@+id/tv_score1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -85,10 +77,10 @@
                         android:id="@+id/tv_goafarea"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="出生年月" />
+                        android:text="项目部（车间）考核" />
 
                     <TextView
-                        android:id="@+id/tv_birthday"
+                        android:id="@+id/tv_score2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -104,34 +96,16 @@
                         android:id="@+id/tv_tablename"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="参检工作时间" />
+                        android:text="班组考核" />
 
                     <TextView
-                        android:id="@+id/tv_work_date"
+                        android:id="@+id/tv_score3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:text="" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_fcreater"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="工作部门" />
-
-                    <TextView
-                        android:id="@+id/tv_department"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="" />
-                </LinearLayout>
             </LinearLayout>
 
         </RelativeLayout>
@@ -142,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:layout_marginRight="8dp"
-            android:text="人员详情" />
+            android:text="详情" />
 
     </LinearLayout>
 

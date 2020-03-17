@@ -17,6 +17,7 @@ import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.utils.Spe
 import com.jingchengsoft.dzjplatform.http.ApiResponse;
 import com.jingchengsoft.dzjplatform.http.CommonException;
 import com.jingchengsoft.dzjplatform.http.PretreatmentCallback;
+import com.jingchengsoft.dzjplatform.ui.widget.CommonSearch;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -40,6 +41,8 @@ public class SpecialWorkActivity extends MyActivity {
     private List<SpecialWork> dataList = new ArrayList<>();
     private SpecialWorkAdapter adapter;
     private int page = 0;
+    private List<String> searchItem = new ArrayList<>();
+    private String searchValue = "";
 
     @Override
     protected int getLayoutId() {
@@ -49,6 +52,8 @@ public class SpecialWorkActivity extends MyActivity {
     SmartRefreshLayout srl_special_work;
     @BindView(R.id.rv_special_work)
     RecyclerView rv_special_work;
+    @BindView(R.id.common_search)
+    CommonSearch commonSearch;
 
     @Override
     protected void initView() {
@@ -57,7 +62,9 @@ public class SpecialWorkActivity extends MyActivity {
 
     @Override
     protected void initData() {
-        getListData(page);
+        getListData(searchValue, page);
+        searchItem.add("姓名");
+        commonSearch.setSearchParam(searchItem);
     }
 
     @Override
@@ -69,11 +76,20 @@ public class SpecialWorkActivity extends MyActivity {
 
     @Override
     protected void initListener() {
+        commonSearch.setSearchListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchValue = commonSearch.getSearchContent();
+                page = 0;
+                getListData(searchValue, page);
+            }
+        });
+
         srl_special_work.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 page = 0;
-                getListData(page);
+                getListData(searchValue, page);
             }
         });
 
@@ -81,7 +97,7 @@ public class SpecialWorkActivity extends MyActivity {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 page++;
-                getListData(page);
+                getListData(searchValue, page);
             }
         });
 
@@ -97,8 +113,8 @@ public class SpecialWorkActivity extends MyActivity {
     }
 
 
-    private void getListData(int page) {
-        SpecialWorkHttpUtils.getSpecialWorkList("", page*10, 10, new PretreatmentCallback<String>() {
+    private void getListData(String searchValue, int page) {
+        SpecialWorkHttpUtils.getSpecialWorkList(searchValue, page*10, 10, new PretreatmentCallback<String>() {
             @Override
             public void onResponse(@NonNull ApiResponse response) {
                 if(response.getData() != null) {

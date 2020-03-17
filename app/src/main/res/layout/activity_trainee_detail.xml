@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightColor="@color/colorTitle"
+        app:rightTitle=""
+        app:title="人员详情" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="姓名"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="性别"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_ic_card_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="身份证号"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="出生日期"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_start_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="入场日期"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_end_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="退场日期"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_education"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="文化程度"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_job_site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="作业部位"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_special_work"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="工种(包含特殊工种)"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_unit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="所属单位"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="家庭住址"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_is_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="是否有身份证照片"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_is_special_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="是否有特种作业证"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_special_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="特种作业证编号"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_trainee_detail_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="备注"
+                app:bar_rightText="" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
