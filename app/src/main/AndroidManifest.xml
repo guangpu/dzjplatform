@@ -79,9 +79,25 @@
 
         </activity>
 
+        <!--领导带班检查添加-->
+        <activity
+            android:name=".feature.home.function.hiddencheck.activity.LeaderCheckAddActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
         <!--安全专项检查添加-->
         <activity
             android:name=".feature.home.function.hiddencheck.activity.SafeCheckAddActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--安全监督日志添加-->
+        <activity
+            android:name=".feature.home.function.hiddencheck.activity.SafeLogAddActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor" >
@@ -182,6 +198,22 @@
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor" >
         </activity>
+
+        <!--统计分析-->
+        <activity
+            android:name=".feature.home.function.statistic.activity.StatisticActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!-- 浏览器 -->
+        <activity
+            android:name=".feature.home.web.BrowserActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/web_title"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>

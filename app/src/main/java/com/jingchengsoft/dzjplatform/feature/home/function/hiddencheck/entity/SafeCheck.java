@@ -7,12 +7,20 @@ package com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity;
  */
 public class SafeCheck {
     private String id;
-    private String unit;
     private String projectName;
-    private String leaderName;
-    private String projectManager;
+    private String checkClassify;
+    private String writePeople;
+    private String inputPeople;
     private String checkDate;
     private String inputDate;
+
+    public String getWritePeople() {
+        return writePeople;
+    }
+
+    public void setWritePeople(String writePeople) {
+        this.writePeople = writePeople;
+    }
 
     public String getId() {
         return id;
@@ -20,14 +28,6 @@ public class SafeCheck {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
     }
 
     public String getProjectName() {
@@ -38,20 +38,20 @@ public class SafeCheck {
         this.projectName = projectName;
     }
 
-    public String getLeaderName() {
-        return leaderName;
+    public String getCheckClassify() {
+        return checkClassify;
     }
 
-    public void setLeaderName(String leaderName) {
-        this.leaderName = leaderName;
+    public void setCheckClassify(String checkClassify) {
+        this.checkClassify = checkClassify;
     }
 
-    public String getProjectManager() {
-        return projectManager;
+    public String getInputPeople() {
+        return inputPeople;
     }
 
-    public void setProjectManager(String projectManager) {
-        this.projectManager = projectManager;
+    public void setInputPeople(String inputPeople) {
+        this.inputPeople = inputPeople;
     }
 
     public String getCheckDate() {

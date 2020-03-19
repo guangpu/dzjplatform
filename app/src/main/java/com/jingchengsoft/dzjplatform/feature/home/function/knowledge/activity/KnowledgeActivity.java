@@ -14,6 +14,7 @@ import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.knowledge.adapter.KnowledgeAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.knowledge.entity.Knowledge;
 import com.jingchengsoft.dzjplatform.feature.home.function.knowledge.utils.KnowledgeHttpUtils;
+import com.jingchengsoft.dzjplatform.feature.home.web.BrowserActivity;
 import com.jingchengsoft.dzjplatform.http.ApiResponse;
 import com.jingchengsoft.dzjplatform.http.CommonException;
 import com.jingchengsoft.dzjplatform.http.PretreatmentCallback;
@@ -108,6 +109,7 @@ public class KnowledgeActivity extends MyActivity {
             public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
                 if(view.getId() == R.id.btn_choose) {
                     //SpecialWorkDetailActivity.start(dataList.get(position).getId());
+                    BrowserActivity.start(KnowledgeActivity.this, "file:///android_asset/pdfjs/web/viewer.html?file="+"http://192.168.31.183:8080/coalminehwaui/templates/mtdzj/knowledgeresource/previewFile.html?suffix=pdf&path=/upload/98ae4627-8f8c-4763-8ab8-aa71f5e263dc.pdf&fileName=98ae4627-8f8c-4763-8ab8-aa71f5e263dc.pdf", "文件预览");
                 }
             }
         });

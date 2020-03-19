@@ -1,26 +1,33 @@
 package com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.adapter;
 
-import android.content.Context;
-import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-
-import com.jingchengsoft.dzjplatform.common.MyAdapter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.LeaderCheck;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 /**
  * author : wgp
  * time   :  2020/3/11
  * desc   :  领导带班检查适配器
  */
-public class LeaderCheckAdapter extends MyAdapter<LeaderCheck> {
-    public LeaderCheckAdapter(@NonNull Context context) {
-        super(context);
+public class LeaderCheckAdapter extends BaseQuickAdapter<LeaderCheck, BaseViewHolder> {
+
+    public LeaderCheckAdapter(@Nullable List<LeaderCheck> data) {
+        super(R.layout.item_leader_check, data);
     }
 
-    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    protected void convert(@NotNull BaseViewHolder baseViewHolder, LeaderCheck leaderCheck) {
+        baseViewHolder.setText(R.id.tv_project_name, leaderCheck.getProject_name());
+        baseViewHolder.setText(R.id.tv_checked_unit, "");
+        baseViewHolder.setText(R.id.tv_leader_name, leaderCheck.getClass_leader());
+        baseViewHolder.setText(R.id.tv_project_manager, leaderCheck.getProject_manager());
+        baseViewHolder.setText(R.id.tv_check_date, leaderCheck.getInspection_date());
+        baseViewHolder.setText(R.id.tv_input_date, leaderCheck.getRectificat_date());
     }
 }

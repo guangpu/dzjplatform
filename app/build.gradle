@@ -202,8 +202,8 @@ dependencies {
 
 //    implementation 'com.lmntrx.android.library.livin.missme:missme:0.1.5'
 
-    // 图表库：https://github.com/PhilJay/MPAndroidChart
-    //implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //图表库：https://github.com/PhilJay/MPAndroidChart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     //Display tables with headers https://github.com/miguelbcr/TableFixHeaders-Wrapper
     //implementation "com.github.miguelbcr:TableFixHeaders-Wrapper:0.2.0"

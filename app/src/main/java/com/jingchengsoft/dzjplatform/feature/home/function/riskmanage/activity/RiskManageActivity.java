@@ -11,6 +11,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.adapter.RiskAdapter;
+import com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.entity.Risk;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.activity.SpecialWorkDetailActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.adapter.SpecialWorkAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.entity.SpecialWork;
@@ -39,8 +41,8 @@ public class RiskManageActivity extends MyActivity {
         ActivityUtils.startActivity(RiskManageActivity.class);
     }
 
-    private List<SpecialWork> dataList = new ArrayList<>();
-    private SpecialWorkAdapter adapter;
+    private List<Risk> dataList = new ArrayList<>();
+    private RiskAdapter adapter;
     private int page = 0;
     private List<String> searchItem = new ArrayList<>();
     private String searchValue = "";
@@ -71,7 +73,7 @@ public class RiskManageActivity extends MyActivity {
 
     @Override
     protected void initAdapter() {
-        adapter = new SpecialWorkAdapter(dataList);
+        adapter = new RiskAdapter(dataList);
         rv_common.setLayoutManager(linearLayoutManager);
         rv_common.setAdapter(adapter);
     }
@@ -108,7 +110,7 @@ public class RiskManageActivity extends MyActivity {
             @Override
             public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
                 if (view.getId() == R.id.btn_choose) {
-                    SpecialWorkDetailActivity.start(dataList.get(position).getId());
+                    //SpecialWorkDetailActivity.start(dataList.get(position).getId());
                 }
             }
         });
@@ -116,30 +118,20 @@ public class RiskManageActivity extends MyActivity {
 
 
     private void getListData(String searchValue, int page) {
-        SpecialWorkHttpUtils.getSpecialWorkList(searchValue, page * 10, 10, new PretreatmentCallback<String>() {
-            @Override
-            public void onResponse(@NonNull ApiResponse response) {
-                if (response.getData() != null) {
-                    List<SpecialWork> list = JSON.parseArray(response.getData(), SpecialWork.class);
-                    if (page == 0) {
-                        srl_common.finishRefresh();
-                        dataList.clear();
-                    }
-                    srl_common.finishLoadMore();
-                    dataList.addAll(list);
-                    adapter.setNewData(dataList);
-                    adapter.notifyDataSetChanged();
-                }
-            }
+        List<Risk> dataList = new ArrayList<>();
+        Risk risk = new Risk();
+        risk.setProjectName("电源异常");
+        risk.setReportDate("2020-03-18");
+        risk.setReportPeople("李俊凯");
 
-            @Override
-            public void onException(CommonException e) {
-                if (page == 0) {
-                    srl_common.finishRefresh();
-                }
-                srl_common.finishLoadMore();
-                toast(e.getException().getMessage());
-            }
-        });
+        Risk risk1 = new Risk();
+        risk1.setProjectName("粉尘过量");
+        risk1.setReportDate("2020-03-20");
+        risk1.setReportPeople("李俊凯");
+
+        dataList.add(risk);
+        dataList.add(risk1);
+        adapter.setNewData(dataList);
+        adapter.notifyDataSetChanged();
     }
 }

@@ -8,6 +8,7 @@ import com.jingchengsoft.dzjplatform.common.MyFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.HiddenCheckActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.adapter.SafeCheckAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.SafeCheck;
+import com.jingchengsoft.dzjplatform.ui.widget.CommonSearch;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -24,8 +25,11 @@ import butterknife.BindView;
  * desc   :  安全专项检查
  */
 public class SafeCheckFragment extends MyFragment<HiddenCheckActivity> {
-    private SafeCheckAdapter adapter;
     private List<SafeCheck> dataList = new ArrayList<>();
+    private SafeCheckAdapter adapter;
+    private int page = 0;
+    private List<String> searchItem = new ArrayList<>();
+    private String searchValue = "";
 
     public static SafeCheckFragment newInstance() {
         return new SafeCheckFragment();
@@ -40,6 +44,8 @@ public class SafeCheckFragment extends MyFragment<HiddenCheckActivity> {
     SmartRefreshLayout srl_check;
     @BindView(R.id.rv_check)
     RecyclerView rv_check;
+    @BindView(R.id.common_search)
+    CommonSearch commonSearch;
 
     @Override
     protected void initView() {
@@ -48,12 +54,15 @@ public class SafeCheckFragment extends MyFragment<HiddenCheckActivity> {
 
     @Override
     protected void initData() {
-
+        getListData(searchValue, page);
+        searchItem.add("名称");
+        commonSearch.setSearchParam(searchItem);
     }
 
     @Override
     protected void initAdapter() {
         adapter = new SafeCheckAdapter(dataList);
+        rv_check.setLayoutManager(linearLayoutManager);
         rv_check.setAdapter(adapter);
     }
 
@@ -74,18 +83,28 @@ public class SafeCheckFragment extends MyFragment<HiddenCheckActivity> {
         });
     }
 
-    /**
-     * 刷新列表
-     */
-    private void refresh() {
+    private void getListData(String searchValue, int page) {
+        List<SafeCheck> dataList = new ArrayList<>();
+        SafeCheck safeCheck = new SafeCheck();
+        safeCheck.setProjectName("安全检查0223");
+        safeCheck.setCheckClassify("防火检查");
+        safeCheck.setInputPeople("王丽娟");
+        safeCheck.setWritePeople("李凯丽");
+        safeCheck.setCheckDate("2020-4-6");
+        safeCheck.setInputDate("2020-4-12");
 
-    }
+        SafeCheck safeCheck1 = new SafeCheck();
+        safeCheck1.setProjectName("安全检查0225");
+        safeCheck1.setCheckClassify("电器检查");
+        safeCheck1.setInputPeople("王娟");
+        safeCheck1.setWritePeople("李丽");
+        safeCheck1.setCheckDate("2020-4-16");
+        safeCheck1.setInputDate("2020-4-22");
 
-    /**
-     * 加载更多
-     */
-    private void loadMore() {
-
+        dataList.add(safeCheck);
+        dataList.add(safeCheck1);
+        adapter.setNewData(dataList);
+        adapter.notifyDataSetChanged();
     }
 
 }

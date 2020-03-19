@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightColor="@color/colorTitle"
+        app:rightTitle="问题清单"
+        app:title="新增" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_project_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="项目名称"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_check_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="天气情况"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_check_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="填报日期"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_check_accompany_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="记录人"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="停水停电情况  "
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/rg_release_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:completionThreshold="1"
+                        android:hint="下达方式"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/rb_release_fast"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="停水" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/rb_release_enter_hidden"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="停电" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/rb_release_enter_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="正常" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_hidden_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:bar_leftText="安全教育及班前活动情况"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_rectification_time_limit4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="安全检查情况"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_rectification_time_limit3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="安全隐患及整改情况"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_rectification_time_limit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="安全技术交底情况"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_rectification_time_limit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="安全验收情况"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_responsible_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="其他"
+                app:bar_rightIcon="@drawable/ico_go_black"
+                app:bar_rightText="" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_hidden_input_sure"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确认" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_hidden_input_cancel"
+                    style="@style/ButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="取消" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -22,6 +22,10 @@ public class SafeLogAdapter extends BaseQuickAdapter<SafeLog, BaseViewHolder> {
 
     @Override
     protected void convert(@NotNull BaseViewHolder baseViewHolder, SafeLog safeLog) {
-
+        baseViewHolder.setText(R.id.tv_project_name, safeLog.getProjectName());
+        baseViewHolder.setText(R.id.tv_weather_status, safeLog.getWeatherStatus());
+        baseViewHolder.setText(R.id.tv_tstd_status, safeLog.getTstdStatus());
+        baseViewHolder.setText(R.id.tv_write_people, safeLog.getWritePeople());
+        baseViewHolder.setText(R.id.tv_write_date, safeLog.getWriteDate());
     }
 }

@@ -10,6 +10,9 @@ import com.hjq.base.BaseFragmentAdapter;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.common.MyFragment;
+import com.jingchengsoft.dzjplatform.feature.home.function.emergency.fragment.PractiseCommentFragment;
+import com.jingchengsoft.dzjplatform.feature.home.function.emergency.fragment.PractisePlanFragment;
+import com.jingchengsoft.dzjplatform.feature.home.function.emergency.fragment.PractiseRecordFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.LeaderCheckAddActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.SafeCheckAddActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.fragment.LeaderCheckFragment;
@@ -50,9 +53,9 @@ public class EmergencyActivity extends MyActivity implements ViewPager.OnPageCha
     @Override
     protected void initData() {
         mPagerAdapter = new BaseFragmentAdapter<>(this);
-        mPagerAdapter.addFragment(LeaderCheckFragment.newInstance());
-        mPagerAdapter.addFragment(SafeCheckFragment.newInstance());
-        mPagerAdapter.addFragment(SafeLogFragment.newInstance());
+        mPagerAdapter.addFragment(PractisePlanFragment.newInstance());
+        mPagerAdapter.addFragment(PractiseRecordFragment.newInstance());
+        mPagerAdapter.addFragment(PractiseCommentFragment.newInstance());
 
         viewPager.setAdapter(mPagerAdapter);
         viewPager.setCurrentItem(0);
@@ -63,8 +66,8 @@ public class EmergencyActivity extends MyActivity implements ViewPager.OnPageCha
 
     @Override
     public void onRightClick(View v) {
-        if(currentItem == 0) LeaderCheckAddActivity.start();
-        if(currentItem == 1) SafeCheckAddActivity.start();
+//        if(currentItem == 0) LeaderCheckAddActivity.start();
+//        if(currentItem == 1) SafeCheckAddActivity.start();
     }
 
     @Override

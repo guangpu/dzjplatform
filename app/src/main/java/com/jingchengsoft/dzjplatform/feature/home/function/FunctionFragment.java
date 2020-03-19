@@ -12,6 +12,7 @@ import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.
 import com.jingchengsoft.dzjplatform.feature.home.function.knowledge.activity.KnowledgeActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.activity.RiskManageActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.activity.SpecialWorkActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.statistic.activity.StatisticActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.training.activity.TrainingActivity;
 
 import java.util.ArrayList;
@@ -96,7 +97,9 @@ public class FunctionFragment extends MyFragment<HomeActivity> {
                     case "风险管控":
                         RiskManageActivity.start();
                         break;
-
+                    case "统计分析":
+                        StatisticActivity.start();
+                        break;
                 }
             }
         });
