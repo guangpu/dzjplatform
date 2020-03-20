@@ -13,6 +13,7 @@ import com.jingchengsoft.dzjplatform.common.MyFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.emergency.entity.PractiseRecord;
 import com.jingchengsoft.dzjplatform.feature.home.function.emergency.utils.EmergencyHttpUtils;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.HiddenCheckActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.LeaderCheckDetailActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.adapter.LeaderCheckAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.LeaderCheck;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.utils.HiddenCheckHttpUtils;
@@ -111,8 +112,9 @@ public class LeaderCheckFragment extends MyFragment<HiddenCheckActivity> {
         adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
             @Override
             public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+                LeaderCheckDetailActivity.start(dataList.get(position).getId());
                 if(view.getId() == R.id.btn_choose) {
-                    //SpecialWorkDetailActivity.start(dataList.get(position).getId());
+                    LeaderCheckDetailActivity.start(dataList.get(position).getId());
                 }
             }
         });

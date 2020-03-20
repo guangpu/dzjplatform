@@ -11,10 +11,11 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_centerVertical="true"
-        android:src="@drawable/ic_prj" />
+        android:padding="8dp"
+        android:src="@drawable/ic_f_question" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/ic_prj"
@@ -23,10 +24,10 @@
         android:paddingBottom="8dp">
 
         <TextView
-            android:id="@+id/tv_project_name"
+            android:id="@+id/tv_question_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="京沪高速扩建工程（项目名称）"
+            android:text="问题描述"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -37,11 +38,11 @@
             <TextView
                 android:id="@+id/tv_totallength1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="受检单位" />
+                android:layout_height="match_parent"
+                android:text="整改措施" />
 
             <TextView
-                android:id="@+id/tv_checked_unit"
+                android:id="@+id/tv_rectify_method"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -58,10 +59,10 @@
                 android:id="@+id/tv_totallength2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="带班领导" />
+                android:text="整改人" />
 
             <TextView
-                android:id="@+id/tv_leader_name"
+                android:id="@+id/tv_rectify_people"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -77,10 +78,10 @@
                 android:id="@+id/tv_totallength3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="项目经理" />
+                android:text="完成期限" />
 
             <TextView
-                android:id="@+id/tv_project_manager"
+                android:id="@+id/tv_finish_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -96,40 +97,18 @@
                 android:id="@+id/tv_totallength4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="检查日期" />
+                android:text="备注" />
 
             <TextView
-                android:id="@+id/tv_check_date"
+                android:id="@+id/tv_question_remark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:text="2019-02-05" />
-
-            <TextView
-                android:id="@+id/tv_totallength"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:text="填报日期" />
-
-            <TextView
-                android:id="@+id/tv_input_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:text="2020-05-06" />
+                android:text="" />
         </LinearLayout>
 
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/btn_choose"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ic_set" />
 
     <View
         android:layout_width="match_parent"

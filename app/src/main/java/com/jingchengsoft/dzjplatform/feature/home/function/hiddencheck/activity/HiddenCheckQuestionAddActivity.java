@@ -1,8 +1,12 @@
 package com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.LogUtils;
@@ -17,11 +21,17 @@ import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.feature.common.activity.ImageActivity;
 import com.jingchengsoft.dzjplatform.feature.common.adapter.PhotoAdapter;
+import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.utils.HiddenCheckHttpUtils;
+import com.jingchengsoft.dzjplatform.http.ApiResponse;
+import com.jingchengsoft.dzjplatform.http.CommonException;
+import com.jingchengsoft.dzjplatform.http.PretreatmentCallback;
 import com.jingchengsoft.dzjplatform.other.GlideEngine;
 import com.jingchengsoft.dzjplatform.ui.dialog.DateDialog;
 import com.jingchengsoft.dzjplatform.ui.dialog.InputBigDialog;
 import com.jingchengsoft.dzjplatform.ui.dialog.InputDialog;
+import com.zhouyou.http.body.ProgressResponseCallBack;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -35,12 +45,17 @@ import butterknife.BindView;
  */
 public class HiddenCheckQuestionAddActivity extends MyActivity implements View.OnClickListener {
 
-    public static void start() {
-        ActivityUtils.startActivity(HiddenCheckQuestionAddActivity.class);
+    public static void start(String addId) {
+        Bundle bundle = new Bundle();
+        bundle.putString("addId", addId);
+        ActivityUtils.startActivity(bundle, HiddenCheckQuestionAddActivity.class);
     }
 
     private PhotoAdapter photoAdapter;
     private ArrayList<Photo> imageList = new ArrayList<>();
+    private List<File> fileList = new ArrayList<>();
+
+    private String projectId, projectName, problemDesc, rectificationReq, rectificationPerson, completeDate, remark, inspectionType, addId;
 
     @Override
     protected int getLayoutId() {
@@ -65,9 +80,16 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
     //现场照片
     @BindView(R.id.gv_question_input)
     GridView gv_question_input;
+    @BindView(R.id.btn_hidden_input_sure)
+    AppCompatButton btn_hidden_input_sure;
 
     @Override
     protected void initView() {
+        Bundle bundle = getIntent().getExtras();
+        addId = bundle.getString("addId");
+        projectId = "12340";
+        projectName = "测试项目";
+
         photoAdapter = new PhotoAdapter(imageList, this, true);
         gv_question_input.setAdapter(photoAdapter);
     }
@@ -79,6 +101,7 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
         sb_question_input_rectification_people.setOnClickListener(this);
         sb_question_input_finish_date.setOnClickListener(this);
         sb_question_input_remark.setOnClickListener(this);
+        btn_hidden_input_sure.setOnClickListener(this);
         gv_question_input.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -106,8 +129,8 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
 
     //显示添加录像或者取证照片
     private void selectImage(int position) {
-        if(position == imageList.size()) {
-            if(position == 5) {
+        if (position == imageList.size()) {
+            if (position == 5) {
                 toast("附件已达最大选择数量，请选择删除");
             } else {
                 addPhotos();
@@ -127,8 +150,9 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
                     @Override
                     public void onResult(ArrayList<Photo> photos, boolean isOriginal) {
                         LogUtils.i("选中了图片数目：" + photos.size());
-                        for(Photo photo:photos) {
+                        for (Photo photo : photos) {
                             imageList.add(photo);
+                            fileList.add(new File(photo.path));
                         }
                         photoAdapter.notifyDataSetChanged();
                     }
@@ -148,10 +172,11 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
                         .setListener(new InputBigDialog.OnListener() {
                             @Override
                             public void onConfirm(BaseDialog dialog, String content) {
-                                if(StringUtils.isEmpty(content)) {
+                                if (StringUtils.isEmpty(content)) {
                                     toast("不能为空");
                                 } else {
                                     sb_question_input_description.setRightText(content);
+                                    problemDesc = content;
                                 }
                             }
 
@@ -172,10 +197,11 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
                         .setListener(new InputBigDialog.OnListener() {
                             @Override
                             public void onConfirm(BaseDialog dialog, String content) {
-                                if(StringUtils.isEmpty(content)) {
+                                if (StringUtils.isEmpty(content)) {
                                     toast("不能为空");
                                 } else {
                                     sb_question_input_rectification_solutions.setRightText(content);
+                                    rectificationReq = content;
                                 }
                             }
 
@@ -196,10 +222,11 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
                         .setListener(new InputDialog.OnListener() {
                             @Override
                             public void onConfirm(BaseDialog dialog, String content) {
-                                if(StringUtils.isEmpty(content)) {
+                                if (StringUtils.isEmpty(content)) {
                                     toast("不能为空");
                                 } else {
                                     sb_question_input_rectification_people.setRightText(content);
+                                    rectificationPerson = content;
                                 }
                             }
 
@@ -228,7 +255,8 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
                                 calendar.set(Calendar.MINUTE, 0);
                                 calendar.set(Calendar.SECOND, 0);
                                 calendar.set(Calendar.MILLISECOND, 0);
-                                sb_question_input_finish_date.setRightText(TimeUtils.millis2String(calendar.getTimeInMillis()).substring(0,10));
+                                sb_question_input_finish_date.setRightText(TimeUtils.millis2String(calendar.getTimeInMillis()).substring(0, 10));
+                                completeDate = TimeUtils.millis2String(calendar.getTimeInMillis()).substring(0, 10);
                             }
 
                             @Override
@@ -248,10 +276,11 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
                         .setListener(new InputDialog.OnListener() {
                             @Override
                             public void onConfirm(BaseDialog dialog, String content) {
-                                if(StringUtils.isEmpty(content)) {
+                                if (StringUtils.isEmpty(content)) {
                                     toast("不能为空");
                                 } else {
                                     sb_question_input_remark.setRightText(content);
+                                    remark = content;
                                 }
                             }
 
@@ -262,8 +291,31 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
                         })
                         .show();
                 break;
+            case R.id.btn_hidden_input_sure:
+                addQuestion();
+                break;
         }
     }
 
+    private void addQuestion() {
+        HiddenCheckHttpUtils.addCheckQuestion(projectId, projectName, problemDesc, rectificationReq, rectificationPerson, completeDate, remark, "1", addId, fileList, new ProgressResponseCallBack() {
+            @Override
+            public void onResponseProgress(long bytesWritten, long contentLength, boolean done) {
+
+            }
+        }, new PretreatmentCallback<String>() {
+            @Override
+            public void onResponse(@NonNull ApiResponse response) {
+                if (response.isOk()) {
+                    toast("添加成功");
+                }
+            }
+
+            @Override
+            public void onException(CommonException e) {
+                toast("添加失败");
+            }
+        });
+    }
 
 }
