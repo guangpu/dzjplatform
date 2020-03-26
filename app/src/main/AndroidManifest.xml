@@ -215,6 +215,14 @@
             android:screenOrientation="fullSensor" >
         </activity>
 
+        <!--风险管控详情-->
+        <activity
+            android:name=".feature.home.function.riskmanage.activity.RiskManageDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
         <!--统计分析-->
         <activity
             android:name=".feature.home.function.statistic.activity.StatisticActivity"

@@ -1,5 +1,6 @@
 package com.jingchengsoft.dzjplatform.ui.dialog;
 
+import android.app.AlertDialog.Builder;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -59,6 +60,15 @@ public final class InputBigDialog {
         }
         public Builder setHint(CharSequence text) {
             mInputView.setHint(text);
+            return this;
+        }
+
+        public Builder setTitle(@StringRes int id) {
+            return setTitle(getString(id));
+        }
+
+        public Builder setTitle(CharSequence text) {
+            mTitleView.setText(text);
             return this;
         }
 

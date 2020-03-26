@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="填报日期"
-                app:bar_rightText="2020-03-12" />
+                app:bar_rightText="" />
 
 
             <com.hjq.widget.layout.SettingBar
@@ -68,6 +68,7 @@
                 android:id="@+id/sb_check_input_manage_req"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:bar_rightIcon="@drawable/ico_go_black"
                 app:bar_leftText="管理要求"
                 app:bar_rightText="" />
 
@@ -82,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="检查日期"
-                app:bar_rightText="2020-03-12" />
+                app:bar_rightText="" />
 
             <View
                 android:layout_width="match_parent"

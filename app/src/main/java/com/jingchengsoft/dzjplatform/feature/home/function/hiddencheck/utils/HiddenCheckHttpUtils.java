@@ -57,7 +57,12 @@ public class HiddenCheckHttpUtils {
     }
 
     public static void addLeaderCheck(String projectId, String projectName, String projectManager, String createTime, String createId, String imageProgress, String manageReq,
-                                      String inspectionDate, String classLeader, String rectificatDate, String chargePerson, String addId, PretreatmentCallback callback) {
+                                      String inspectionDate, String classLeader, String rectificatDate, String chargePerson, String addId,  ProgressResponseCallBack progressCallBack,PretreatmentCallback callback) {
+        File file1 = new File("/storage/emulated/legacy/DCIM/Camera/IMG_20200320_154442.jpg");
+        File file2 = new File("/storage/emulated/legacy/DCIM/Camera/IMG_20200320_154436.jpg");
+        List<File> fileList = new ArrayList<>();
+        fileList.add(file1);
+        fileList.add(file2);
         EasyHttp.post("apia/v1/projectInspection/addOrUpdate")
                 .params("project_id", projectId)
                 .params("project_name", projectName)
@@ -75,6 +80,7 @@ public class HiddenCheckHttpUtils {
                 .params("insertOrUpdate", "1")
                 .params("file_path_update","")
                 .params("token", SpUser.INSTANCE.getToken())
+                .addFileParams("file", fileList, progressCallBack)//多文件
                 .execute(callback);
 
     }

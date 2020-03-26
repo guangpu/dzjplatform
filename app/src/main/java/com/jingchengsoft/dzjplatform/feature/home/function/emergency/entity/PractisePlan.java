@@ -30,7 +30,7 @@ public class PractisePlan {
     private String remark;
     private String id;
     private String comp_id;
-    private String creater_id;
+    private String create_id;
     private int file_num;
 
     public String getUpdate_id() {
@@ -105,12 +105,12 @@ public class PractisePlan {
         this.comp_id = comp_id;
     }
 
-    public String getCreater_id() {
-        return creater_id;
+    public String getCreate_id() {
+        return create_id;
     }
 
-    public void setCreater_id(String creater_id) {
-        this.creater_id = creater_id;
+    public void setCreate_id(String create_id) {
+        this.create_id = create_id;
     }
 
     public int getFile_num() {

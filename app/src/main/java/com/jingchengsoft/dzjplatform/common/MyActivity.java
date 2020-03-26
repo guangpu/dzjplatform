@@ -14,15 +14,19 @@ import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
 import com.hjq.base.BaseActivity;
 import com.hjq.toast.ToastUtils;
+import com.hjq.widget.layout.SettingBar;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.helper.ActivityStackManager;
 import com.jingchengsoft.dzjplatform.other.AppConfig;
 import com.jingchengsoft.dzjplatform.other.StatusManager;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 
@@ -402,4 +406,5 @@ public abstract class MyActivity extends BaseActivity
     public void showLayout(Drawable drawable, CharSequence hint, View.OnClickListener listener) {
         mStatusManager.showLayout(getContentView(), drawable, hint, listener);
     }
+
 }

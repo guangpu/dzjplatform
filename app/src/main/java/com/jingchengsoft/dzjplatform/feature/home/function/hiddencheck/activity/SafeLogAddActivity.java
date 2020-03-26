@@ -66,195 +66,195 @@ public class SafeLogAddActivity extends MyActivity implements View.OnClickListen
 
     @Override
     protected void initListener() {
-//        sb_hidden_input_project_name.setOnClickListener(this);
-//        sb_hidden_input_check_date.setOnClickListener(this);
-//        sb_hidden_input_check_people.setOnClickListener(this);
-//        sb_hidden_input_check_accompany_people.setOnClickListener(this);
-//        sb_hidden_input_hidden_details.setOnClickListener(this);
-//        sb_hidden_input_rectification_time_limit.setOnClickListener(this);
-//        sb_hidden_input_responsible_people.setOnClickListener(this);
+        sb_hidden_input_project_name.setOnClickListener(this);
+        sb_hidden_input_check_date.setOnClickListener(this);
+        sb_hidden_input_check_people.setOnClickListener(this);
+        sb_hidden_input_check_accompany_people.setOnClickListener(this);
+        sb_hidden_input_hidden_details.setOnClickListener(this);
+        sb_hidden_input_rectification_time_limit.setOnClickListener(this);
+        sb_hidden_input_responsible_people.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.sb_hidden_input_project_name:
-//                new InputDialog.Builder(getActivity())
-//                        .setTitle("请输入项目名称")
-//                        .setContent(sb_hidden_input_project_name.getRightText().toString())
-//                        .setConfirm("确定")
-//                        .setCancel("取消")
-//                        //.setHint("")
-//                        .setListener(new InputDialog.OnListener() {
-//                            @Override
-//                            public void onConfirm(BaseDialog dialog, String content) {
-//                                if(StringUtils.isEmpty(content)) {
-//                                    toast("不能为空");
-//                                } else {
-//                                    sb_hidden_input_project_name.setRightText(content);
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onCancel(BaseDialog dialog) {
-//
-//                            }
-//                        })
-//                        .show();
-//                break;
-//            case R.id.sb_hidden_input_check_date:
-//                new DateDialog.Builder(getActivity())
-//                        .setTitle("请选择日期")
-//                        .setConfirm("确定")
-//                        .setCancel("取消")
-//                        .setDate(0)
-//                        .setListener(new DateDialog.OnListener() {
-//                            @Override
-//                            public void onSelected(BaseDialog dialog, int year, int month, int day) {
-//                                toast(year + getString(R.string.common_year) + month + getString(R.string.common_month) + day + getString(R.string.common_day));
-//                                Calendar calendar = Calendar.getInstance();
-//                                calendar.set(Calendar.YEAR, year);
-//                                calendar.set(Calendar.MONTH, month - 1);
-//                                calendar.set(Calendar.DAY_OF_MONTH, day);
-//                                calendar.set(Calendar.HOUR, 0);
-//                                calendar.set(Calendar.MINUTE, 0);
-//                                calendar.set(Calendar.SECOND, 0);
-//                                calendar.set(Calendar.MILLISECOND, 0);
-//                                sb_hidden_input_check_date.setRightText(TimeUtils.millis2String(calendar.getTimeInMillis()).substring(0,10));
-//                            }
-//
-//                            @Override
-//                            public void onCancel(BaseDialog dialog) {
-//
-//                            }
-//                        })
-//                        .show();
-//                break;
-//            case R.id.sb_hidden_input_check_people:
-//                new InputDialog.Builder(getActivity())
-//                        .setTitle("请输入检查负责人")
-//                        .setContent(sb_hidden_input_check_people.getRightText().toString())
-//                        .setConfirm("确定")
-//                        .setCancel("取消")
-//                        //.setHint("")
-//                        .setListener(new InputDialog.OnListener() {
-//                            @Override
-//                            public void onConfirm(BaseDialog dialog, String content) {
-//                                if(StringUtils.isEmpty(content)) {
-//                                    toast("不能为空");
-//                                } else {
-//                                    sb_hidden_input_check_people.setRightText(content);
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onCancel(BaseDialog dialog) {
-//
-//                            }
-//                        })
-//                        .show();
-//                break;
-//            case R.id.sb_hidden_input_check_accompany_people:
-//                new InputDialog.Builder(getActivity())
-//                        .setTitle("请输入参检人员")
-//                        .setContent(sb_hidden_input_check_accompany_people.getRightText().toString())
-//                        .setConfirm("确定")
-//                        .setCancel("取消")
-//                        //.setHint("")
-//                        .setListener(new InputDialog.OnListener() {
-//                            @Override
-//                            public void onConfirm(BaseDialog dialog, String content) {
-//                                if(StringUtils.isEmpty(content)) {
-//                                    toast("不能为空");
-//                                } else {
-//                                    sb_hidden_input_check_accompany_people.setRightText(content);
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onCancel(BaseDialog dialog) {
-//
-//                            }
-//                        })
-//                        .show();
-//                break;
-//            case R.id.sb_hidden_input_hidden_details:
-//                new InputBigDialog.Builder(getActivity())
-//                        .setTitle("请输入检查内容")
-//                        .setContent(sb_hidden_input_hidden_details.getRightText().toString())
-//                        .setConfirm("确定")
-//                        .setCancel("取消")
-//                        //.setHint("")
-//                        .setListener(new InputBigDialog.OnListener() {
-//                            @Override
-//                            public void onConfirm(BaseDialog dialog, String content) {
-//                                if(StringUtils.isEmpty(content)) {
-//                                    toast("不能为空");
-//                                } else {
-//                                    sb_hidden_input_hidden_details.setRightText(content);
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onCancel(BaseDialog dialog) {
-//
-//                            }
-//                        })
-//                        .show();
-//                break;
-//            case R.id.sb_hidden_input_rectification_time_limit:
-//                new DateDialog.Builder(getActivity())
-//                        .setTitle("请选择日期")
-//                        .setConfirm("确定")
-//                        .setCancel("取消")
-//                        .setDate(0)
-//                        .setListener(new DateDialog.OnListener() {
-//                            @Override
-//                            public void onSelected(BaseDialog dialog, int year, int month, int day) {
-//                                toast(year + getString(R.string.common_year) + month + getString(R.string.common_month) + day + getString(R.string.common_day));
-//                                Calendar calendar = Calendar.getInstance();
-//                                calendar.set(Calendar.YEAR, year);
-//                                calendar.set(Calendar.MONTH, month - 1);
-//                                calendar.set(Calendar.DAY_OF_MONTH, day);
-//                                calendar.set(Calendar.HOUR, 0);
-//                                calendar.set(Calendar.MINUTE, 0);
-//                                calendar.set(Calendar.SECOND, 0);
-//                                calendar.set(Calendar.MILLISECOND, 0);
-//                                sb_hidden_input_rectification_time_limit.setRightText(TimeUtils.millis2String(calendar.getTimeInMillis()).substring(0,10));
-//                            }
-//
-//                            @Override
-//                            public void onCancel(BaseDialog dialog) {
-//
-//                            }
-//                        })
-//                        .show();
-//                break;
-//            case R.id.sb_hidden_input_responsible_people:
-//                new InputDialog.Builder(getActivity())
-//                        .setTitle("请输入整改负责人")
-//                        .setContent(sb_hidden_input_responsible_people.getRightText().toString())
-//                        .setConfirm("确定")
-//                        .setCancel("取消")
-//                        //.setHint("")
-//                        .setListener(new InputDialog.OnListener() {
-//                            @Override
-//                            public void onConfirm(BaseDialog dialog, String content) {
-//                                if(StringUtils.isEmpty(content)) {
-//                                    toast("不能为空");
-//                                } else {
-//                                    sb_hidden_input_responsible_people.setRightText(content);
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onCancel(BaseDialog dialog) {
-//
-//                            }
-//                        })
-//                        .show();
-//                break;
-//        }
+        switch (v.getId()) {
+            case R.id.sb_hidden_input_project_name:
+                new InputDialog.Builder(getActivity())
+                        .setTitle("请输入项目名称")
+                        .setContent(sb_hidden_input_project_name.getRightText().toString())
+                        .setConfirm("确定")
+                        .setCancel("取消")
+                        //.setHint("")
+                        .setListener(new InputDialog.OnListener() {
+                            @Override
+                            public void onConfirm(BaseDialog dialog, String content) {
+                                if(StringUtils.isEmpty(content)) {
+                                    toast("不能为空");
+                                } else {
+                                    sb_hidden_input_project_name.setRightText(content);
+                                }
+                            }
+
+                            @Override
+                            public void onCancel(BaseDialog dialog) {
+
+                            }
+                        })
+                        .show();
+                break;
+            case R.id.sb_hidden_input_check_date:
+                new DateDialog.Builder(getActivity())
+                        .setTitle("请选择日期")
+                        .setConfirm("确定")
+                        .setCancel("取消")
+                        .setDate(0)
+                        .setListener(new DateDialog.OnListener() {
+                            @Override
+                            public void onSelected(BaseDialog dialog, int year, int month, int day) {
+                                toast(year + getString(R.string.common_year) + month + getString(R.string.common_month) + day + getString(R.string.common_day));
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(Calendar.YEAR, year);
+                                calendar.set(Calendar.MONTH, month - 1);
+                                calendar.set(Calendar.DAY_OF_MONTH, day);
+                                calendar.set(Calendar.HOUR, 0);
+                                calendar.set(Calendar.MINUTE, 0);
+                                calendar.set(Calendar.SECOND, 0);
+                                calendar.set(Calendar.MILLISECOND, 0);
+                                sb_hidden_input_check_date.setRightText(TimeUtils.millis2String(calendar.getTimeInMillis()).substring(0,10));
+                            }
+
+                            @Override
+                            public void onCancel(BaseDialog dialog) {
+
+                            }
+                        })
+                        .show();
+                break;
+            case R.id.sb_hidden_input_check_people:
+                new InputDialog.Builder(getActivity())
+                        .setTitle("请输入检查负责人")
+                        .setContent(sb_hidden_input_check_people.getRightText().toString())
+                        .setConfirm("确定")
+                        .setCancel("取消")
+                        //.setHint("")
+                        .setListener(new InputDialog.OnListener() {
+                            @Override
+                            public void onConfirm(BaseDialog dialog, String content) {
+                                if(StringUtils.isEmpty(content)) {
+                                    toast("不能为空");
+                                } else {
+                                    sb_hidden_input_check_people.setRightText(content);
+                                }
+                            }
+
+                            @Override
+                            public void onCancel(BaseDialog dialog) {
+
+                            }
+                        })
+                        .show();
+                break;
+            case R.id.sb_hidden_input_check_accompany_people:
+                new InputDialog.Builder(getActivity())
+                        .setTitle("请输入参检人员")
+                        .setContent(sb_hidden_input_check_accompany_people.getRightText().toString())
+                        .setConfirm("确定")
+                        .setCancel("取消")
+                        //.setHint("")
+                        .setListener(new InputDialog.OnListener() {
+                            @Override
+                            public void onConfirm(BaseDialog dialog, String content) {
+                                if(StringUtils.isEmpty(content)) {
+                                    toast("不能为空");
+                                } else {
+                                    sb_hidden_input_check_accompany_people.setRightText(content);
+                                }
+                            }
+
+                            @Override
+                            public void onCancel(BaseDialog dialog) {
+
+                            }
+                        })
+                        .show();
+                break;
+            case R.id.sb_hidden_input_hidden_details:
+                new InputBigDialog.Builder(getActivity())
+                        .setTitle("请输入检查内容")
+                        .setContent(sb_hidden_input_hidden_details.getRightText().toString())
+                        .setConfirm("确定")
+                        .setCancel("取消")
+                        //.setHint("")
+                        .setListener(new InputBigDialog.OnListener() {
+                            @Override
+                            public void onConfirm(BaseDialog dialog, String content) {
+                                if(StringUtils.isEmpty(content)) {
+                                    toast("不能为空");
+                                } else {
+                                    sb_hidden_input_hidden_details.setRightText(content);
+                                }
+                            }
+
+                            @Override
+                            public void onCancel(BaseDialog dialog) {
+
+                            }
+                        })
+                        .show();
+                break;
+            case R.id.sb_hidden_input_rectification_time_limit:
+                new DateDialog.Builder(getActivity())
+                        .setTitle("请选择日期")
+                        .setConfirm("确定")
+                        .setCancel("取消")
+                        .setDate(0)
+                        .setListener(new DateDialog.OnListener() {
+                            @Override
+                            public void onSelected(BaseDialog dialog, int year, int month, int day) {
+                                toast(year + getString(R.string.common_year) + month + getString(R.string.common_month) + day + getString(R.string.common_day));
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(Calendar.YEAR, year);
+                                calendar.set(Calendar.MONTH, month - 1);
+                                calendar.set(Calendar.DAY_OF_MONTH, day);
+                                calendar.set(Calendar.HOUR, 0);
+                                calendar.set(Calendar.MINUTE, 0);
+                                calendar.set(Calendar.SECOND, 0);
+                                calendar.set(Calendar.MILLISECOND, 0);
+                                sb_hidden_input_rectification_time_limit.setRightText(TimeUtils.millis2String(calendar.getTimeInMillis()).substring(0,10));
+                            }
+
+                            @Override
+                            public void onCancel(BaseDialog dialog) {
+
+                            }
+                        })
+                        .show();
+                break;
+            case R.id.sb_hidden_input_responsible_people:
+                new InputDialog.Builder(getActivity())
+                        .setTitle("请输入整改负责人")
+                        .setContent(sb_hidden_input_responsible_people.getRightText().toString())
+                        .setConfirm("确定")
+                        .setCancel("取消")
+                        //.setHint("")
+                        .setListener(new InputDialog.OnListener() {
+                            @Override
+                            public void onConfirm(BaseDialog dialog, String content) {
+                                if(StringUtils.isEmpty(content)) {
+                                    toast("不能为空");
+                                } else {
+                                    sb_hidden_input_responsible_people.setRightText(content);
+                                }
+                            }
+
+                            @Override
+                            public void onCancel(BaseDialog dialog) {
+
+                            }
+                        })
+                        .show();
+                break;
+        }
     }
 
 

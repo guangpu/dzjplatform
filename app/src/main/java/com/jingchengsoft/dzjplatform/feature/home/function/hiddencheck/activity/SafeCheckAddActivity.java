@@ -8,6 +8,7 @@ import com.blankj.utilcode.util.TimeUtils;
 import com.hjq.base.BaseDialog;
 import com.hjq.widget.layout.SettingBar;
 import com.jingchengsoft.dzjplatform.R;
+import com.jingchengsoft.dzjplatform.common.InputActivity;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.ui.dialog.DateDialog;
 import com.jingchengsoft.dzjplatform.ui.dialog.InputBigDialog;
@@ -22,7 +23,7 @@ import butterknife.BindView;
  * time   :  2020/3/11
  * desc   :  安全专项检查新增
  */
-public class SafeCheckAddActivity extends MyActivity implements View.OnClickListener {
+public class SafeCheckAddActivity extends InputActivity implements View.OnClickListener {
     public static void start() {
         ActivityUtils.startActivity(SafeCheckAddActivity.class);
     }
@@ -56,12 +57,23 @@ public class SafeCheckAddActivity extends MyActivity implements View.OnClickList
 
     @Override
     protected void initView() {
-
+        initRequiredField();
     }
 
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    protected void initRequiredField() {
+        addRequiredField(sb_hidden_input_project_name);
+        addRequiredField(sb_hidden_input_check_date);
+        addRequiredField(sb_hidden_input_check_people);
+        addRequiredField(sb_hidden_input_check_accompany_people);
+        addRequiredField(sb_hidden_input_hidden_details);
+        addRequiredField(sb_hidden_input_rectification_time_limit);
+        addRequiredField(sb_hidden_input_responsible_people);
     }
 
     @Override

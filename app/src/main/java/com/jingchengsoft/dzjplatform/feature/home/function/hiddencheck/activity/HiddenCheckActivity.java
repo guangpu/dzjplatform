@@ -10,7 +10,6 @@ import com.hjq.base.BaseFragmentAdapter;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.common.MyFragment;
-import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.LeaderCheck;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.fragment.LeaderCheckFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.fragment.SafeCheckFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.fragment.SafeLogFragment;

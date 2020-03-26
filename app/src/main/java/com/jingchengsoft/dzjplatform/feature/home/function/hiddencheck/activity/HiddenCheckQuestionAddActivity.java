@@ -308,6 +308,7 @@ public class HiddenCheckQuestionAddActivity extends MyActivity implements View.O
             public void onResponse(@NonNull ApiResponse response) {
                 if (response.isOk()) {
                     toast("添加成功");
+                    finish();
                 }
             }
 

@@ -110,7 +110,7 @@ public class RiskManageActivity extends MyActivity {
             @Override
             public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
                 if (view.getId() == R.id.btn_choose) {
-                    //SpecialWorkDetailActivity.start(dataList.get(position).getId());
+                    RiskManageDetailActivity.start(dataList.get(position).getId());
                 }
             }
         });
@@ -118,13 +118,14 @@ public class RiskManageActivity extends MyActivity {
 
 
     private void getListData(String searchValue, int page) {
-        List<Risk> dataList = new ArrayList<>();
         Risk risk = new Risk();
+        risk.setId("123123123");
         risk.setProjectName("电源异常");
         risk.setReportDate("2020-03-18");
         risk.setReportPeople("李俊凯");
 
         Risk risk1 = new Risk();
+        risk.setId("1231231233");
         risk1.setProjectName("粉尘过量");
         risk1.setReportDate("2020-03-20");
         risk1.setReportPeople("李俊凯");

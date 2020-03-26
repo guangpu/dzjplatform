@@ -8,6 +8,7 @@ package com.jingchengsoft.dzjplatform.http;
 public class HttpConfig {
     public static final int PAGE_SIZE = 20;
 
-    public static final String BASE_URL = "http://192.168.31.183:9010/";
+    public static final String BASE_URL = "http://192.168.3.22:9010/";
     public static final String LOGIN = "apia/v1/user/login";
 }
+
