@@ -67,6 +67,7 @@ public class PractisePlanFragment extends MyFragment<HiddenCheckActivity> {
     protected void initData() {
         getListData(searchValue, page);
         searchItem.add("名称");
+        searchItem.add("单位");
         commonSearch.setSearchParam(searchItem);
     }
 

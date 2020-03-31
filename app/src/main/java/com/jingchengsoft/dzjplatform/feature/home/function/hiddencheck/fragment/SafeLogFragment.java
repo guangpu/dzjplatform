@@ -1,16 +1,31 @@
 package com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.fragment;
 
+import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.fastjson.JSON;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.HiddenCheckActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.SafeCheckDetailActivity;
+import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.SafeLogDetailActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.adapter.SafeCheckAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.adapter.SafeLogAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.SafeCheck;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.SafeLog;
+import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.utils.HiddenCheckHttpUtils;
+import com.jingchengsoft.dzjplatform.http.ApiResponse;
+import com.jingchengsoft.dzjplatform.http.CommonException;
+import com.jingchengsoft.dzjplatform.http.PretreatmentCallback;
 import com.jingchengsoft.dzjplatform.ui.widget.CommonSearch;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,26 +79,71 @@ public class SafeLogFragment extends MyFragment<HiddenCheckActivity> {
         rv_check.setAdapter(adapter);
     }
 
+    @Override
+    protected void initListener() {
+        commonSearch.setSearchListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchValue = commonSearch.getSearchContent();
+                page = 0;
+                getListData(searchValue, page);
+            }
+        });
+
+        srl_check.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                page = 0;
+                getListData(searchValue, page);
+            }
+        });
+
+        srl_check.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                page++;
+                getListData(searchValue, page);
+            }
+        });
+
+        adapter.addChildClickViewIds(R.id.btn_choose);
+        adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+                SafeLogDetailActivity.start(dataList.get(position).getId());
+                if(view.getId() == R.id.btn_choose) {
+                    SafeLogDetailActivity.start(dataList.get(position).getId());
+                }
+            }
+        });
+    }
+
     private void getListData(String searchValue, int page) {
-        List<SafeLog> dataList = new ArrayList<>();
-        SafeLog safeLog = new SafeLog();
-        safeLog.setProjectName("项目0319");
-        safeLog.setWeatherStatus("晴");
-        safeLog.setTstdStatus("正常");
-        safeLog.setWritePeople("刘世杰");
-        safeLog.setWriteDate("2020-05-08");
+        HiddenCheckHttpUtils.getCheckList(searchValue, page * 10, 10, "4", new PretreatmentCallback<String>() {
+            @Override
+            public void onResponse(@NonNull ApiResponse response) {
+                if(response.getData() != null) {
+                    List<SafeLog> list= JSON.parseArray(response.getData(), SafeLog.class);
+                    if(page == 0) {
+                        srl_check.finishRefresh();
+                        dataList.clear();
+                    }
+                    srl_check.finishLoadMore();
+                    dataList.addAll(list);
+                    adapter.setNewData(dataList);
+                    adapter.notifyDataSetChanged();
+                }
+            }
 
-        SafeLog safeLog1 = new SafeLog();
-        safeLog1.setProjectName("项目0318");
-        safeLog1.setWeatherStatus("雨");
-        safeLog1.setTstdStatus("停电");
-        safeLog1.setWritePeople("刘世杰");
-        safeLog1.setWriteDate("2020-05-08");
-
-        dataList.add(safeLog);
-        dataList.add(safeLog1);
-        adapter.setNewData(dataList);
-        adapter.notifyDataSetChanged();
+            @Override
+            public void onException(CommonException e) {
+                if(page == 0) {
+                    srl_check.finishRefresh();
+                }
+                srl_check.finishLoadMore();
+                toast(e.getException().getMessage());
+            }
+        });
     }
 
 }

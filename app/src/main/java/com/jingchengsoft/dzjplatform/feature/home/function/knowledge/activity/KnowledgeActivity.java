@@ -109,7 +109,7 @@ public class KnowledgeActivity extends MyActivity {
             public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
                 if(view.getId() == R.id.btn_choose) {
                     //SpecialWorkDetailActivity.start(dataList.get(position).getId());
-                    BrowserActivity.start(KnowledgeActivity.this, "file:///android_asset/pdfjs/web/viewer.html?file="+"http://192.168.31.183:8080/coalminehwaui/templates/mtdzj/knowledgeresource/previewFile.html?suffix=pdf&path=/upload/98ae4627-8f8c-4763-8ab8-aa71f5e263dc.pdf&fileName=98ae4627-8f8c-4763-8ab8-aa71f5e263dc.pdf", "文件预览");
+                    BrowserActivity.start(KnowledgeActivity.this, "file:///android_asset/pdfjs/web/viewer.html?file="+"http://preview.mail.163.com/download.do?uid=qiqipupu@163.com&mid=184%3A1tbiuAr2b1QHJ1+jzwAAss&sid=EAWnwtXAGHgzPhgesFAAJQiRxSEymujV&part=3&filename=&keyfrom=wm163.com&keyfrom=wm163.com", "文件预览");
                 }
             }
         });

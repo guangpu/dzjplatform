@@ -23,9 +23,9 @@ public class InspectionAdapter extends BaseQuickAdapter<Inspection, BaseViewHold
 
     @Override
     protected void convert(@NotNull BaseViewHolder baseViewHolder, Inspection inspection) {
-        baseViewHolder.setText(R.id.tv_inspection_name, inspection.getInspectionName());
-        baseViewHolder.setText(R.id.tv_write_people, inspection.getWritePeople());
-        baseViewHolder.setText(R.id.tv_phone_num, inspection.getPhoneNum());
-        baseViewHolder.setText(R.id.tv_write_date, inspection.getWriteDate());
+        baseViewHolder.setText(R.id.tv_inspection_name, inspection.getContent());
+        baseViewHolder.setText(R.id.tv_write_people, inspection.getName());
+        baseViewHolder.setText(R.id.tv_phone_num, inspection.getMobile());
+        baseViewHolder.setText(R.id.tv_write_date, inspection.getCreate_time());
     }
 }

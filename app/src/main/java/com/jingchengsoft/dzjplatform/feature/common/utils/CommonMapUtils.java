@@ -12,6 +12,7 @@ public class CommonMapUtils {
     private static Map<String, String> eduMap = new HashMap<>();
     private static Map<String, String> sexMap = new HashMap<>();
     private static Map<String, String> wonMap = new HashMap<>();
+    private static Map<String, String> waterPowerMap = new HashMap<>();
 
     public static String getWon(String num) {
         wonMap.put("0", "否");
@@ -33,5 +34,13 @@ public class CommonMapUtils {
         eduMap.put("4", "硕士");
         eduMap.put("5", "博士");
         return eduMap.get(num);
+    }
+
+    public static String getWaterPowerCondition(String num) {
+        waterPowerMap.put("1", "停水");
+        waterPowerMap.put("2", "停电");
+        waterPowerMap.put("3", "正常");
+
+        return waterPowerMap.get(num);
     }
 }

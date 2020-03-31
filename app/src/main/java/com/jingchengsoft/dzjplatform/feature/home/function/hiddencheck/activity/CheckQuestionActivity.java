@@ -15,9 +15,7 @@ import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.adapter.CheckQuestionAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.CheckQuestion;
-import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.adapter.SpecialWorkDetailAdapter;
-import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.entity.SpecialWorkDetail;
-import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.utils.SpecialWorkHttpUtils;
+import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.utils.HiddenCheckHttpUtils;
 import com.jingchengsoft.dzjplatform.http.ApiResponse;
 import com.jingchengsoft.dzjplatform.http.CommonException;
 import com.jingchengsoft.dzjplatform.http.PretreatmentCallback;
@@ -37,13 +35,13 @@ import butterknife.BindView;
  * desc   :  检查问题列表
  */
 public class CheckQuestionActivity extends MyActivity {
-    public static void start(String personId) {
+    public static void start(String inspectionId) {
         Bundle bundle = new Bundle();
-        bundle.putString("personId", personId);
+        bundle.putString("inspectionId", inspectionId);
         ActivityUtils.startActivity(bundle, CheckQuestionActivity.class);
     }
 
-    private String personId = "";
+    private String inspectionId = "";
     private List<CheckQuestion> dataList = new ArrayList<>();
     private CheckQuestionAdapter adapter;
     private int page = 0;
@@ -60,8 +58,8 @@ public class CheckQuestionActivity extends MyActivity {
     @Override
     protected void initView() {
         Bundle bundle = getIntent().getExtras();
-        personId = bundle.getString("personId");
-        LogUtils.i("人员ID:"+personId);
+        inspectionId = bundle.getString("inspectionId");
+        LogUtils.i("检查ID:"+inspectionId);
     }
 
     @Override
@@ -112,25 +110,30 @@ public class CheckQuestionActivity extends MyActivity {
 
 
     private void getListData(int page) {
-        List<CheckQuestion> dataList = new ArrayList<>();
+        HiddenCheckHttpUtils.getCheckQuestionList(page * 10, 10, inspectionId, "", "", new PretreatmentCallback<String>() {
+            @Override
+            public void onResponse(@NonNull ApiResponse response) {
+                if(response.getData() != null) {
+                    List<CheckQuestion> list= JSON.parseArray(response.getData(), CheckQuestion.class);
+                    if(page == 0) {
+                        srl_special_work.finishRefresh();
+                        dataList.clear();
+                    }
+                    srl_special_work.finishLoadMore();
+                    dataList.addAll(list);
+                    adapter.setNewData(dataList);
+                    adapter.notifyDataSetChanged();
+                }
+            }
 
-        CheckQuestion checkQuestion = new CheckQuestion();
-        checkQuestion.setDesc("安全隐患问题");
-        checkQuestion.setRectifyMethod("消除隐患");
-        checkQuestion.setFinishDate("2020-6-15");
-        checkQuestion.setRectifyPeople("张经理");
-        checkQuestion.setRemark("备注");
-
-        CheckQuestion checkQuestion1 = new CheckQuestion();
-        checkQuestion1.setDesc("消防设备问题");
-        checkQuestion1.setRectifyMethod("消除隐患");
-        checkQuestion1.setFinishDate("2020-6-15");
-        checkQuestion1.setRectifyPeople("张经理");
-        checkQuestion1.setRemark("备注");
-
-        dataList.add(checkQuestion);
-        dataList.add(checkQuestion1);
-        adapter.setNewData(dataList);
-        adapter.notifyDataSetChanged();
+            @Override
+            public void onException(CommonException e) {
+                if(page == 0) {
+                    srl_special_work.finishRefresh();
+                }
+                srl_special_work.finishLoadMore();
+                toast(e.getException().getMessage());
+            }
+        });
     }
 }

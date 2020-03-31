@@ -17,19 +17,19 @@ import java.util.List;
 public class HiddenCheckHttpUtils {
 
     /**
-     * 获取领导带班检查列表
+     * 获取检查列表
      * @param keyWord
      * @param start
      * @param length
      * @param callback
      */
-    public static void getLeaderCheckList(String keyWord, int start, int length, PretreatmentCallback callback) {
+    public static void getCheckList(String keyWord, int start, int length, String inspectionType, PretreatmentCallback callback) {
         EasyHttp.post("apia/v1/projectInspection/list")
                 .params("keyWord", keyWord)
                 .params("start", String.valueOf(start))
                 .params("length", String.valueOf(length))
                 .params("token", SpUser.INSTANCE.getToken())
-                .params("inspection_type", "1")
+                .params("inspection_type", inspectionType)
                 .execute(callback);
     }
 
@@ -38,11 +38,30 @@ public class HiddenCheckHttpUtils {
      * @param id
      * @param callback
      */
-    public static void getLeaderCheckDetail(String id, PretreatmentCallback callback) {
+    public static void getCheckDetail(String id, String inspectionType, PretreatmentCallback callback) {
         EasyHttp.post("apia/v1/projectInspection/getOne")
                 .params("id", id)
                 .params("token", SpUser.INSTANCE.getToken())
-                .params("inspection_type", "1")
+                .params("inspection_type", inspectionType)
+                .execute(callback);
+    }
+
+    /**
+     * 获取检查问题列表
+     * @param start
+     * @param length
+     * @param inspectionId
+     * @param projectId
+     * @param inspectionTypeDetail
+     * @param callback
+     */
+    public static void getCheckQuestionList(int start, int length, String inspectionId, String projectId, String inspectionTypeDetail, PretreatmentCallback callback) {
+        EasyHttp.post("apia/v1/projectInspection/specialsafetyinspectionListApp")
+                .params("start", String.valueOf(start))
+                .params("length", String.valueOf(length))
+                .params("inspection_id", inspectionId)
+                .params("project_id", projectId)
+                .params("inspection_type_detail", inspectionTypeDetail)
                 .execute(callback);
     }
 

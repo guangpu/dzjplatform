@@ -22,10 +22,10 @@ public class CheckQuestionAdapter  extends BaseQuickAdapter<CheckQuestion, BaseV
 
     @Override
     protected void convert(@NotNull BaseViewHolder baseViewHolder, CheckQuestion checkQuestion) {
-        baseViewHolder.setText(R.id.tv_question_desc, checkQuestion.getDesc());
-        baseViewHolder.setText(R.id.tv_rectify_method, checkQuestion.getRectifyMethod());
-        baseViewHolder.setText(R.id.tv_rectify_people, checkQuestion.getRectifyPeople());
-        baseViewHolder.setText(R.id.tv_finish_date, checkQuestion.getFinishDate());
-        baseViewHolder.setText(R.id.tv_question_remark, checkQuestion.getRemark());
+        baseViewHolder.setText(R.id.tv_problem_description, checkQuestion.getProblem_description());
+        baseViewHolder.setText(R.id.tv_rectification_requirements, checkQuestion.getRectification_requirements());
+        baseViewHolder.setText(R.id.tv_rectification_person, checkQuestion.getRectification_person());
+        baseViewHolder.setText(R.id.tv_complete_date, checkQuestion.getComplete_date());
+        baseViewHolder.setText(R.id.tv_remark, checkQuestion.getRemark());
     }
 }

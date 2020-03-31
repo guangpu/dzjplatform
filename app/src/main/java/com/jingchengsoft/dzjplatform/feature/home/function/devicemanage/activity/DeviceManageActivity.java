@@ -2,13 +2,19 @@ package com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.activit
 
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.fastjson.JSON;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.adapter.InspectionAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.entity.Inspection;
+import com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.utils.DeviceManageHttpUtils;
+import com.jingchengsoft.dzjplatform.http.ApiResponse;
+import com.jingchengsoft.dzjplatform.http.CommonException;
+import com.jingchengsoft.dzjplatform.http.PretreatmentCallback;
 import com.jingchengsoft.dzjplatform.ui.widget.CommonSearch;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
@@ -70,23 +76,30 @@ public class DeviceManageActivity extends MyActivity {
     }
 
     private void getListData(String searchValue, int page) {
-        List<Inspection> dataList = new ArrayList<>();
+        DeviceManageHttpUtils.getInspectionList(searchValue, page * 10, 10, new PretreatmentCallback<String>() {
+            @Override
+            public void onResponse(@NonNull ApiResponse response) {
+                if(response.getData() != null) {
+                    List<Inspection> list= JSON.parseArray(response.getData(), Inspection.class);
+                    if(page == 0) {
+                        srl_check.finishRefresh();
+                        dataList.clear();
+                    }
+                    srl_check.finishLoadMore();
+                    dataList.addAll(list);
+                    adapter.setNewData(dataList);
+                    adapter.notifyDataSetChanged();
+                }
+            }
 
-        Inspection inspection = new Inspection();
-        inspection.setInspectionName("钻机巡检记录");
-        inspection.setWritePeople("张杰");
-        inspection.setPhoneNum("15625856956");
-        inspection.setWriteDate("2020-05-11");
-
-        Inspection inspection1 = new Inspection();
-        inspection1.setInspectionName("消防设施巡检记录");
-        inspection1.setWritePeople("张杰");
-        inspection1.setPhoneNum("15625856956");
-        inspection1.setWriteDate("2020-05-11");
-
-        dataList.add(inspection);
-        dataList.add(inspection1);
-        adapter.setNewData(dataList);
-        adapter.notifyDataSetChanged();
+            @Override
+            public void onException(CommonException e) {
+                if(page == 0) {
+                    srl_check.finishRefresh();
+                }
+                srl_check.finishLoadMore();
+                toast(e.getException().getMessage());
+            }
+        });
     }
 }

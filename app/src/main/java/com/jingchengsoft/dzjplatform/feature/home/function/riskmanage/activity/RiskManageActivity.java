@@ -17,6 +17,8 @@ import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.activity.
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.adapter.SpecialWorkAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.entity.SpecialWork;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.utils.SpecialWorkHttpUtils;
+import com.jingchengsoft.dzjplatform.feature.home.function.training.entity.Trainee;
+import com.jingchengsoft.dzjplatform.feature.home.function.training.utils.TrainingHttpUtils;
 import com.jingchengsoft.dzjplatform.http.ApiResponse;
 import com.jingchengsoft.dzjplatform.http.CommonException;
 import com.jingchengsoft.dzjplatform.http.PretreatmentCallback;
@@ -118,21 +120,30 @@ public class RiskManageActivity extends MyActivity {
 
 
     private void getListData(String searchValue, int page) {
-        Risk risk = new Risk();
-        risk.setId("123123123");
-        risk.setProjectName("电源异常");
-        risk.setReportDate("2020-03-18");
-        risk.setReportPeople("李俊凯");
+        TrainingHttpUtils.getTraineeList(searchValue, page*10, 10, new PretreatmentCallback<String>() {
+            @Override
+            public void onResponse(@NonNull ApiResponse response) {
+                if(response.getData() != null) {
+                    List<Risk> list= JSON.parseArray(response.getData(), Risk.class);
+                    if(page == 0) {
+                        srl_common.finishRefresh();
+                        dataList.clear();
+                    }
+                    srl_common.finishLoadMore();
+                    dataList.addAll(list);
+                    adapter.setNewData(dataList);
+                    adapter.notifyDataSetChanged();
+                }
+            }
 
-        Risk risk1 = new Risk();
-        risk.setId("1231231233");
-        risk1.setProjectName("粉尘过量");
-        risk1.setReportDate("2020-03-20");
-        risk1.setReportPeople("李俊凯");
-
-        dataList.add(risk);
-        dataList.add(risk1);
-        adapter.setNewData(dataList);
-        adapter.notifyDataSetChanged();
+            @Override
+            public void onException(CommonException e) {
+                if(page == 0) {
+                    srl_common.finishRefresh();
+                }
+                srl_common.finishLoadMore();
+                toast(e.getException().getMessage());
+            }
+        });
     }
 }

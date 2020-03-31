@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:rightColor="@color/colorTitle"
-        app:rightTitle="问题清单"
+        app:rightTitle="新增问题"
         app:title="新增" />
 
     <ScrollView
@@ -33,7 +33,7 @@
                 app:bar_rightText="" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_hidden_input_check_date"
+                android:id="@+id/sb_hidden_input_weather_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="天气情况"
@@ -42,7 +42,7 @@
 
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_hidden_input_check_people"
+                android:id="@+id/sb_hidden_input_write_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="填报日期"
@@ -50,7 +50,7 @@
                 app:bar_rightText="" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_hidden_input_check_accompany_people"
+                android:id="@+id/sb_hidden_input_write_people"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="记录人"
@@ -133,7 +133,7 @@
                 android:background="#ececec" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_hidden_input_rectification_time_limit4"
+                android:id="@+id/sb_hidden_input_hidden_details1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="安全检查情况"
@@ -141,7 +141,7 @@
                 app:bar_rightText="" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_hidden_input_rectification_time_limit3"
+                android:id="@+id/sb_hidden_input_hidden_details2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="安全隐患及整改情况"
@@ -149,7 +149,7 @@
                 app:bar_rightText="" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_hidden_input_rectification_time_limit2"
+                android:id="@+id/sb_hidden_input_hidden_details3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="安全技术交底情况"
@@ -157,7 +157,7 @@
                 app:bar_rightText="" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_hidden_input_rectification_time_limit1"
+                android:id="@+id/sb_hidden_input_hidden_details4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="安全验收情况"
@@ -171,7 +171,7 @@
                 android:background="#ececec" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_hidden_input_responsible_people"
+                android:id="@+id/sb_hidden_input_hidden_details5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="其他"

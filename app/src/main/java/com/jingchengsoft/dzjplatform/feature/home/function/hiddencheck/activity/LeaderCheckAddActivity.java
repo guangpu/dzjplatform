@@ -420,9 +420,11 @@ public class LeaderCheckAddActivity extends InputActivity {
 
     @Override
     protected void initData() {
+        showLoading();
         HiddenCheckHttpUtils.getCheckAddId(new PretreatmentCallback<String>() {
             @Override
             public void onResponse(@NonNull ApiResponse response) {
+                showComplete();
                 if (response.getData() != null) {
                     JSONObject object = JSON.parseObject(response.getData());
                     addId = object.getString("add_id");

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:rightColor="@color/colorTitle"
-        app:rightTitle="问题清单"
+        app:rightTitle="新增问题"
         app:title="新增" />
 
     <ScrollView
@@ -37,6 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="检查日期"
+                app:bar_rightIcon="@drawable/ico_go_black"
                 app:bar_rightText="2020-03-12" />
 
 
@@ -52,8 +53,8 @@
                 android:id="@+id/sb_hidden_input_check_accompany_people"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:bar_rightIcon="@drawable/ico_go_black"
                 app:bar_leftText="参检人员"
+                app:bar_rightIcon="@drawable/ico_go_black"
                 app:bar_rightText="" />
 
 
@@ -63,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 app:bar_leftText="检查内容"
+                app:bar_rightIcon="@drawable/ico_go_black"
                 app:bar_rightText="" />
 
             <View
@@ -76,6 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="整改期限"
+                app:bar_rightIcon="@drawable/ico_go_black"
                 app:bar_rightText="2020-03-12" />
 
             <View

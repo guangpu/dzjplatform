@@ -6,40 +6,59 @@ package com.jingchengsoft.dzjplatform.feature.home.function.devicemanage.entity;
  * desc   :  设备巡检
  */
 public class Inspection {
-    private String inspectionName;
-    private String writePeople;
-    private String phoneNum;
-    private String writeDate;
 
-    public String getInspectionName() {
-        return inspectionName;
+    /**
+     * create_time : 2020-3-1
+     * name : 张三
+     * mobile : 15897895686
+     * index : 1
+     * id : 1
+     * content : 钻机巡检记录
+     */
+
+    private String create_time;
+    private String name;
+    private String mobile;
+    private String id;
+    private String content;
+
+    public String getCreate_time() {
+        return create_time;
     }
 
-    public void setInspectionName(String inspectionName) {
-        this.inspectionName = inspectionName;
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
     }
 
-    public String getWritePeople() {
-        return writePeople;
+    public String getName() {
+        return name;
     }
 
-    public void setWritePeople(String writePeople) {
-        this.writePeople = writePeople;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
-    public String getWriteDate() {
-        return writeDate;
+    public String getId() {
+        return id;
     }
 
-    public void setWriteDate(String writeDate) {
-        this.writeDate = writeDate;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

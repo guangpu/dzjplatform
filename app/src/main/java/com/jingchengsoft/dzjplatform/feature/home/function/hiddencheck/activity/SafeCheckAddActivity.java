@@ -28,6 +28,8 @@ public class SafeCheckAddActivity extends InputActivity implements View.OnClickL
         ActivityUtils.startActivity(SafeCheckAddActivity.class);
     }
 
+    private String addId = "";
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_safe_check_add;
@@ -63,6 +65,15 @@ public class SafeCheckAddActivity extends InputActivity implements View.OnClickL
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    public void onRightClick(View v) {
+        if (addId.equals("")) {
+            toast("数据尚未加载完成！");
+        } else {
+            HiddenCheckQuestionAddActivity.start(addId);
+        }
     }
 
     @Override

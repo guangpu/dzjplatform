@@ -57,7 +57,7 @@ public class RiskManageDetailActivity extends MyActivity {
     }
 
     private void getListData(String checkId) {
-        HiddenCheckHttpUtils.getLeaderCheckDetail(checkId, new PretreatmentCallback<String>() {
+        HiddenCheckHttpUtils.getCheckDetail(checkId, "",new PretreatmentCallback<String>() {
             @Override
             public void onResponse(@NonNull ApiResponse response) {
                 if (response.getData() != null) {

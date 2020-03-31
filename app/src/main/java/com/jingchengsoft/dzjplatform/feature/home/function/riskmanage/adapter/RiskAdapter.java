@@ -4,7 +4,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.entity.Risk;
-import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.entity.SpecialWork;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,8 +23,11 @@ public class RiskAdapter extends BaseQuickAdapter<Risk, BaseViewHolder> {
 
     @Override
     protected void convert(@NotNull BaseViewHolder baseViewHolder, Risk risk) {
-        baseViewHolder.setText(R.id.tv_project_name, risk.getProjectName());
-        baseViewHolder.setText(R.id.tv_report_date, risk.getReportDate());
-        baseViewHolder.setText(R.id.tv_report_people, risk.getReportDate());
+        baseViewHolder.setText(R.id.tv_comp_id, risk.getComp_id());
+        baseViewHolder.setText(R.id.tv_danger_rs_des, risk.getDanger_rs_des());
+        baseViewHolder.setText(R.id.tv_plan_start, risk.getPlan_start());
+        baseViewHolder.setText(R.id.tv_plan_end, risk.getPlan_start());
+        baseViewHolder.setText(R.id.tv_actual_start, risk.getActual_start());
+        baseViewHolder.setText(R.id.tv_actual_end, risk.getActual_end());
     }
 }

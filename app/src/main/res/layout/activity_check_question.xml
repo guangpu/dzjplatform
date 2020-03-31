@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:rightColor="@color/colorTitle"
-        app:rightTitle="新增"
+        app:rightTitle=""
         app:title="问题清单" />
 
     <com.jingchengsoft.dzjplatform.ui.widget.HintLayout

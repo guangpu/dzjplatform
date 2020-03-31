@@ -103,9 +103,25 @@
             android:screenOrientation="fullSensor" >
         </activity>
 
+        <!--安全专项检查详情-->
+        <activity
+            android:name=".feature.home.function.hiddencheck.activity.SafeCheckDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
         <!--安全监督日志添加-->
         <activity
             android:name=".feature.home.function.hiddencheck.activity.SafeLogAddActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor" >
+        </activity>
+
+        <!--安全监督日志详情-->
+        <activity
+            android:name=".feature.home.function.hiddencheck.activity.SafeLogDetailActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor" >

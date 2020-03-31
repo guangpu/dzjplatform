@@ -12,6 +12,7 @@ import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.emergency.entity.PractiseRecord;
 import com.jingchengsoft.dzjplatform.feature.home.function.emergency.utils.EmergencyHttpUtils;
+import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.CheckQuestionActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.HiddenCheckActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.LeaderCheckDetailActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.adapter.LeaderCheckAdapter;
@@ -143,7 +144,7 @@ public class LeaderCheckFragment extends MyFragment<HiddenCheckActivity> {
 //        dataList.add(leaderCheck1);
 //        adapter.setNewData(dataList);
 //        adapter.notifyDataSetChanged();
-        HiddenCheckHttpUtils.getLeaderCheckList(searchValue, page * 10, 10, new PretreatmentCallback<String>() {
+        HiddenCheckHttpUtils.getCheckList(searchValue, page * 10, 10, "1", new PretreatmentCallback<String>() {
             @Override
             public void onResponse(@NonNull ApiResponse response) {
                 if(response.getData() != null) {

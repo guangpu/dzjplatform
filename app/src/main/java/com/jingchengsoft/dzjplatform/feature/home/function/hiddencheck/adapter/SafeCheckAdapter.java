@@ -23,11 +23,11 @@ public class SafeCheckAdapter extends BaseQuickAdapter<SafeCheck, BaseViewHolder
 
     @Override
     protected void convert(@NotNull BaseViewHolder baseViewHolder, SafeCheck safeCheck) {
-        baseViewHolder.setText(R.id.tv_project_name, safeCheck.getProjectName());
-        baseViewHolder.setText(R.id.tv_check_classify, safeCheck.getCheckClassify());
-        baseViewHolder.setText(R.id.tv_write_people, safeCheck.getWritePeople());
-        baseViewHolder.setText(R.id.tv_input_people, safeCheck.getInputPeople());
-        baseViewHolder.setText(R.id.tv_check_date, safeCheck.getCheckDate());
-        baseViewHolder.setText(R.id.tv_input_date, safeCheck.getInputDate());
+        baseViewHolder.setText(R.id.tv_project_name, safeCheck.getProject_name());
+        baseViewHolder.setText(R.id.tv_check_classify, safeCheck.getInspection_type_name());
+        baseViewHolder.setText(R.id.tv_write_people, safeCheck.getCreater_id());
+        baseViewHolder.setText(R.id.tv_input_people, safeCheck.getCreater_id());
+        baseViewHolder.setText(R.id.tv_check_date, safeCheck.getInspection_date());
+        baseViewHolder.setText(R.id.tv_input_date, safeCheck.getCreate_time());
     }
 }

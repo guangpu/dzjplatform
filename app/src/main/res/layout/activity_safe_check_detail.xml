@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightColor="@color/colorTitle"
+        app:rightTitle="问题清单"
+        app:title="详情" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_project_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="项目名称"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_inspection_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="检查日期"
+                app:bar_rightText="" />
+
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_inspection_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="检查负责人"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_check_join_persons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="参检人员"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_hidden_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="检查内容"
+                app:bar_rightText="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_inspection_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="18dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="#ececec" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_rectificat_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="整改期限"
+                app:bar_rightText="" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/sb_hidden_input_charge_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="整改负责人"
+                app:bar_rightText="" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

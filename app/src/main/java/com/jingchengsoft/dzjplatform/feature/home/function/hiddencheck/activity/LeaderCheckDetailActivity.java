@@ -5,31 +5,18 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.fastjson.JSON;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.LogUtils;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.hjq.widget.layout.SettingBar;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.entity.LeaderCheck;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.utils.HiddenCheckHttpUtils;
-import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.adapter.SpecialWorkDetailAdapter;
-import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.entity.SpecialWorkDetail;
-import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.utils.SpecialWorkHttpUtils;
 import com.jingchengsoft.dzjplatform.http.ApiResponse;
 import com.jingchengsoft.dzjplatform.http.CommonException;
 import com.jingchengsoft.dzjplatform.http.PretreatmentCallback;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 
@@ -92,11 +79,11 @@ public class LeaderCheckDetailActivity extends MyActivity {
 
     @Override
     public void onRightClick(View v) {
-        CheckQuestionActivity.start("");
+        CheckQuestionActivity.start(checkId);
     }
 
     private void getListData(String checkId) {
-        HiddenCheckHttpUtils.getLeaderCheckDetail(checkId, new PretreatmentCallback<String>() {
+        HiddenCheckHttpUtils.getCheckDetail(checkId, "1", new PretreatmentCallback<String>() {
             @Override
             public void onResponse(@NonNull ApiResponse response) {
                 if(response.getData() != null) {
