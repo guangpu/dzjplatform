@@ -15,6 +15,10 @@ import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.activity.
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.fragment.LeaderCheckFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.fragment.SafeCheckFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.hiddencheck.fragment.SafeLogFragment;
+import com.jingchengsoft.dzjplatform.feature.home.function.statistic.fragment.DangerStatisticFragment;
+import com.jingchengsoft.dzjplatform.feature.home.function.statistic.fragment.MultipleStatisticFragment;
+import com.jingchengsoft.dzjplatform.feature.home.function.statistic.fragment.RiskManageStatisticFragment;
+import com.jingchengsoft.dzjplatform.feature.home.function.statistic.fragment.RiskStatisticFragment;
 
 import butterknife.BindView;
 
@@ -25,7 +29,8 @@ import butterknife.BindView;
  */
 public class StatisticActivity extends MyActivity implements ViewPager.OnPageChangeListener {
     private BaseFragmentAdapter<MyFragment> mPagerAdapter;
-    private String[] mTitles = {"风险管控分析", "隐患统计分析", "事故综合分析", "人员设备分析"};
+//    private String[] mTitles = {"风险管控分析", "隐患统计分析", "事故综合分析", "人员设备分析"};
+    private String[] mTitles = {"风险管控分析","隐患统计分析","事故综合分析"};
     private int currentItem = 0;
 
     public static void start() {
@@ -50,9 +55,9 @@ public class StatisticActivity extends MyActivity implements ViewPager.OnPageCha
     @Override
     protected void initData() {
         mPagerAdapter = new BaseFragmentAdapter<>(this);
-        mPagerAdapter.addFragment(LeaderCheckFragment.newInstance());
-        mPagerAdapter.addFragment(SafeCheckFragment.newInstance());
-        mPagerAdapter.addFragment(SafeLogFragment.newInstance());
+        mPagerAdapter.addFragment(MultipleStatisticFragment.newInstance());
+        mPagerAdapter.addFragment(DangerStatisticFragment.newInstance());
+        mPagerAdapter.addFragment(RiskStatisticFragment.newInstance());
 
         viewPager.setAdapter(mPagerAdapter);
         viewPager.setCurrentItem(0);
@@ -63,8 +68,8 @@ public class StatisticActivity extends MyActivity implements ViewPager.OnPageCha
 
     @Override
     public void onRightClick(View v) {
-        if(currentItem == 0) LeaderCheckAddActivity.start();
-        if(currentItem == 1) SafeCheckAddActivity.start();
+//        if(currentItem == 0) LeaderCheckAddActivity.start();
+//        if(currentItem == 1) SafeCheckAddActivity.start();
     }
 
     @Override

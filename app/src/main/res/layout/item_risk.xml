@@ -62,7 +62,7 @@
                         android:id="@+id/tv_danger_rs_des"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:textSize="14sp"
                         android:text="" />
                 </LinearLayout>
 
@@ -88,6 +88,7 @@
                         android:id="@+id/tv_goafarea2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
                         android:text="计划结束时间" />
 
                     <TextView
@@ -120,6 +121,7 @@
                         android:id="@+id/tv_goafarea4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
                         android:text="实际结束时间" />
 
                     <TextView

@@ -25,41 +25,43 @@
             android:orientation="vertical">
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_check_input_project_name"
+                android:id="@+id/sb_check_input_comp_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:bar_leftText="项目名称"
-                app:bar_rightText="测试项目" />
+                app:bar_leftText="公司名称"
+                app:bar_rightText="" />
 
 
             <com.hjq.widget.layout.SettingBar
                 android:id="@+id/sb_check_input_create_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:bar_leftText="填报日期"
-                app:bar_rightText="2020-03-09" />
+                app:bar_leftText="重大危险源描述"
+                app:bar_rightText="" />
 
-
-            <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_check_input_create_id"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_danger_rs_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:bar_leftText="填报人"
-                app:bar_rightText="张晶晶" />
+                android:padding="16dp"
+                android:textSize="14sp"
+                android:background="@color/white"
+                android:text=""/>
+
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_check_input_image_progress"
+                android:id="@+id/sb_check_input_plan_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="计划开始时间"
-                app:bar_rightText="2020-03-09" />
+                app:bar_rightText="" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_check_input_manage_req"
+                android:id="@+id/sb_check_input_plan_end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="计划结束时间"
-                app:bar_rightText="2020-03-09" />
+                app:bar_rightText="" />
 
             <View
                 android:layout_width="match_parent"
@@ -68,11 +70,11 @@
                 android:background="#ececec" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_check_input_inspection_date"
+                android:id="@+id/sb_check_input_actual_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="实际开始时间"
-                app:bar_rightText="2020-03-10" />
+                app:bar_rightText="" />
 
             <View
                 android:layout_width="match_parent"
@@ -81,11 +83,11 @@
                 android:background="#ececec" />
 
             <com.hjq.widget.layout.SettingBar
-                android:id="@+id/sb_check_input_class_leader"
+                android:id="@+id/sb_check_input_actual_end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="实际结束时间"
-                app:bar_rightText="2020-03-11" />
+                app:bar_rightText="" />
 
         </LinearLayout>
     </ScrollView>

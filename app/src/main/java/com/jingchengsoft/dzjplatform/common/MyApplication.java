@@ -17,9 +17,11 @@ import com.hjq.toast.ToastUtils;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.http.HttpConfig;
+import com.jingchengsoft.dzjplatform.sp.SpUser;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.zhouyou.http.EasyHttp;
+import com.zhouyou.http.model.HttpParams;
 
 /**
  * author : Android 轮子哥
@@ -106,7 +108,8 @@ public final class MyApplication extends Application {
         EasyHttp.init(application);
         EasyHttp.getInstance()
                 .debug("EasyHttp", true)
-                .setBaseUrl(HttpConfig.BASE_URL);
+                .setBaseUrl(HttpConfig.BASE_URL)
+                .addCommonParams(new HttpParams("token", SpUser.INSTANCE.getToken()));
     }
 
     @Override

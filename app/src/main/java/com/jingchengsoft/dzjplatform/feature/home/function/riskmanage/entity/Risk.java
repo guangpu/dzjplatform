@@ -1,11 +1,13 @@
 package com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.entity;
 
+import java.io.Serializable;
+
 /**
  * author : wgp
  * time   :  2020/3/18
  * desc   :  风险源
  */
-public class Risk {
+public class Risk implements Serializable {
 
     /**
      * plan_end : 2020-03-03

@@ -161,11 +161,11 @@ public class FunctionFragment extends MyFragment<HomeActivity> {
         item8.setIcon(R.drawable.ic_f_journal);
         dataList.add(item8);
 
-//        ItemFunctionEntity item9 = new ItemFunctionEntity();
-//        item9.setType(ItemFunctionEntity.Type.TypeFunction);
-//        item9.setName("统计分析");
-//        item9.setIcon(R.drawable.ic_f_three);
-//        dataList.add(item9);
+        ItemFunctionEntity item9 = new ItemFunctionEntity();
+        item9.setType(ItemFunctionEntity.Type.TypeFunction);
+        item9.setName("统计分析");
+        item9.setIcon(R.drawable.ic_f_three);
+        dataList.add(item9);
 
         return dataList;
     }

@@ -13,6 +13,7 @@ import com.jingchengsoft.dzjplatform.R;
 import com.jingchengsoft.dzjplatform.common.MyActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.adapter.RiskAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.entity.Risk;
+import com.jingchengsoft.dzjplatform.feature.home.function.riskmanage.utils.RiskManageHttpUtils;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.activity.SpecialWorkDetailActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.adapter.SpecialWorkAdapter;
 import com.jingchengsoft.dzjplatform.feature.home.function.specialwork.entity.SpecialWork;
@@ -112,7 +113,7 @@ public class RiskManageActivity extends MyActivity {
             @Override
             public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
                 if (view.getId() == R.id.btn_choose) {
-                    RiskManageDetailActivity.start(dataList.get(position).getId());
+                    RiskManageDetailActivity.start(dataList.get(position).getId(), dataList.get(position));
                 }
             }
         });
@@ -120,7 +121,7 @@ public class RiskManageActivity extends MyActivity {
 
 
     private void getListData(String searchValue, int page) {
-        TrainingHttpUtils.getTraineeList(searchValue, page*10, 10, new PretreatmentCallback<String>() {
+        RiskManageHttpUtils.getDangerList(searchValue, page*10, 10, new PretreatmentCallback<String>() {
             @Override
             public void onResponse(@NonNull ApiResponse response) {
                 if(response.getData() != null) {

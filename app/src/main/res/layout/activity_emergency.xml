@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:rightColor="@color/colorTitle"
         app:rightTitle=""
-        app:title="应急管理" />
+        app:title="综合统计分析" />
 
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tab"

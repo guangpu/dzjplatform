@@ -22,6 +22,7 @@ import android.webkit.WebViewClient;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.github.abel533.echarts.json.GsonOption;
 import com.hjq.base.BaseDialog;
 import com.jingchengsoft.dzjplatform.ui.dialog.InputDialog;
 import com.jingchengsoft.dzjplatform.ui.dialog.MessageDialog;
@@ -75,11 +76,33 @@ public final class BrowserView extends WebView {
     }
 
     /**
-     * 加载文件
+     * 通过地址加载文件
+     * @param url
+     */
+    public void loadFIle(String url) {
+        loadUrl(url);
+    }
+
+    /**
+     * 加载文件I
      * @param file      文件对象
      */
     public void loadFIle(File file) {
         loadUrl(file.toURI().toString());
+    }
+
+    /**刷新图表
+     * java调用js的loadEcharts方法刷新echart
+     * 不能在第一时间就用此方法来显示图表，因为第一时间html的标签还未加载完成，不能获取到标签值
+     * @param option
+     */
+    public void refreshEchartsWithOption(GsonOption option) {
+        if (option == null) {
+            return;
+        }
+        String optionString = option.toString();
+        String call = "javascript:loadEcharts('" + optionString + "')";
+        loadUrl(call);
     }
 
     /**
