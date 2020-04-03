@@ -55,9 +55,9 @@ public class StatisticActivity extends MyActivity implements ViewPager.OnPageCha
     @Override
     protected void initData() {
         mPagerAdapter = new BaseFragmentAdapter<>(this);
-        mPagerAdapter.addFragment(MultipleStatisticFragment.newInstance());
-        mPagerAdapter.addFragment(DangerStatisticFragment.newInstance());
         mPagerAdapter.addFragment(RiskStatisticFragment.newInstance());
+        mPagerAdapter.addFragment(DangerStatisticFragment.newInstance());
+        mPagerAdapter.addFragment(MultipleStatisticFragment.newInstance());
 
         viewPager.setAdapter(mPagerAdapter);
         viewPager.setCurrentItem(0);

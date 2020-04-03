@@ -11,6 +11,7 @@ import com.jingchengsoft.dzjplatform.common.MyFragment;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.activity.StatisticActivity;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.chart.EchartView;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.entity.AccidentAnalysis;
+import com.jingchengsoft.dzjplatform.feature.home.function.statistic.entity.AccidentDied;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.entity.AccidentPercent;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.utils.RiskEchartOptionUtil;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.utils.StatisticHttpUtil;
@@ -44,34 +45,46 @@ public class MultipleStatisticFragment extends MyFragment<StatisticActivity> {
     EchartView accidentNumBarChart;
     @BindView(R.id.accidentAnalysisLineChart)
     EchartView accidentAnalysisLineChart;
+    @BindView(R.id.accidentDiedLineChart)
+    EchartView accidentDiedLineChart;
 
     @Override
     protected void initView() {
-//        getAccidentAnalysisData();
-//        accidentPercentPieChart.setWebViewClient(new WebViewClient(){
-//            @Override
-//            public void onPageFinished(WebView view, String url) {
-//                super.onPageFinished(view, url);
-//                //最好在h5页面加载完毕后再加载数据，防止html的标签还未加载完成，不能正常显示
-//                getAccidentPercentData();
-//            }
-//        });
-//
-//        accidentNumBarChart.setWebViewClient(new WebViewClient(){
-//            @Override
-//            public void onPageFinished(WebView view, String url) {
-//                super.onPageFinished(view, url);
-//                //最好在h5页面加载完毕后再加载数据，防止html的标签还未加载完成，不能正常显示
-//                getAccidentPercentData();
-//            }
-//        });
+        getAccidentAnalysisData();
+        getAccidentPercentData();
+        getAccidentAnalysisData();
+        getAccidentDiedData();
+        accidentPercentPieChart.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                //最好在h5页面加载完毕后再加载数据，防止html的标签还未加载完成，不能正常显示
+                getAccidentPercentData();
+            }
+        });
 
+        accidentNumBarChart.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                //最好在h5页面加载完毕后再加载数据，防止html的标签还未加载完成，不能正常显示
+                getAccidentPercentData();
+            }
+        });
         accidentAnalysisLineChart.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 //最好在h5页面加载完毕后再加载数据，防止html的标签还未加载完成，不能正常显示
                 getAccidentAnalysisData();
+            }
+        });
+        accidentDiedLineChart.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                //最好在h5页面加载完毕后再加载数据，防止html的标签还未加载完成，不能正常显示
+                getAccidentDiedData();
             }
         });
     }
@@ -116,6 +129,23 @@ public class MultipleStatisticFragment extends MyFragment<StatisticActivity> {
         });
     }
 
+    private void getAccidentDiedData() {
+        StatisticHttpUtil.getAccidentDiedStatisticData(new PretreatmentCallback<String>() {
+            @Override
+            public void onResponse(@NonNull ApiResponse response) {
+                if(response.getData()!=null) {
+                    List<AccidentDied> dataList = JSON.parseArray(response.getData(), AccidentDied.class);
+                    refreshAccidentDiedLineChart(dataList);
+                }
+            }
+
+            @Override
+            public void onException(CommonException e) {
+
+            }
+        });
+    }
+
     private void refreshAccidentPercentPieChart(List<AccidentPercent> dataList){
         accidentPercentPieChart.refreshEchartsWithOption(RiskEchartOptionUtil.getAccidentPercentPieChartOptions(dataList));
     }
@@ -125,12 +155,10 @@ public class MultipleStatisticFragment extends MyFragment<StatisticActivity> {
     }
 
     private void refreshAccidentAnalysisLineChart(List<AccidentAnalysis> dataList) {
-        Object[] x = new Object[]{
-                "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"
-        };
-        Object[] y = new Object[]{
-                820, 932, 901, 934, 1290, 1330, 1320
-        };
-        accidentAnalysisLineChart.refreshEchartsWithOption(RiskEchartOptionUtil.getLineChartOptions(x,y));
+        accidentAnalysisLineChart.refreshEchartsWithOption(RiskEchartOptionUtil.getAccidentAnalysisLineChartOption(dataList));
+    }
+
+    private void refreshAccidentDiedLineChart(List<AccidentDied> dataList) {
+        accidentDiedLineChart.refreshEchartsWithOption(RiskEchartOptionUtil.getAccidentDiedLineChartOption(dataList));
     }
 }

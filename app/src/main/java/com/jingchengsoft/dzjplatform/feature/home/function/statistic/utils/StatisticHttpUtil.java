@@ -33,4 +33,10 @@ public class StatisticHttpUtil {
                 .params("year", "2020")
                 .execute(callback);
     }
+
+    public static void getAccidentDiedStatisticData(PretreatmentCallback callback) {
+        EasyHttp.post("apia/v1/compStaticAnalysis/calendarStatisticalAccidents")
+                .params("year", "2020")
+                .execute(callback);
+    }
 }

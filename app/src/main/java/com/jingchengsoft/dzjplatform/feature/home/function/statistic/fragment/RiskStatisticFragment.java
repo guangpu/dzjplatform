@@ -44,7 +44,7 @@ public class RiskStatisticFragment extends MyFragment<StatisticActivity> {
 
     @Override
     protected void initView() {
-        getData();
+//        getData();
         lineChart.setWebViewClient(new WebViewClient(){
             @Override
             public void onPageFinished(WebView view, String url) {

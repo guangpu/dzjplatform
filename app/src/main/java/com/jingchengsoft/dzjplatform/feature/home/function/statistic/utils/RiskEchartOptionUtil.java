@@ -24,6 +24,7 @@ import com.github.abel533.echarts.series.Line;
 import com.github.abel533.echarts.series.Pie;
 import com.github.abel533.echarts.series.Series;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.entity.AccidentAnalysis;
+import com.jingchengsoft.dzjplatform.feature.home.function.statistic.entity.AccidentDied;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.entity.AccidentPercent;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.entity.HiddenDanger;
 import com.jingchengsoft.dzjplatform.feature.home.function.statistic.entity.RiskDanger;
@@ -40,12 +41,91 @@ import java.util.Map;
  */
 public class RiskEchartOptionUtil {
 
+    public static GsonOption getAccidentDiedLineChartOption(List<AccidentDied> dataList) {
+        //http://echarts.baidu.com/echarts2/doc/example/mix1.html
+        GsonOption option = new GsonOption();
+        //title
+        String text = "历年事故数及伤亡人数统计";
+        String subText = "";
+        option.title(text,subText);
+        //tooltip
+        Tooltip tooltip = new Tooltip();
+        tooltip.trigger(Trigger.axis);
+        option.tooltip(tooltip);
+        //toolbox
+        Toolbox toolbox = new Toolbox();
+        toolbox.show(true);
+        Map<String, Feature> feature = new HashMap<String, Feature>();
+        feature.put("mark",new Feature().show(true));
+        feature.put("dataView",new DataView().show(true).readOnly(false));
+        feature.put("magicType",new MagicType(Magic.line, Magic.bar).show(true));
+        feature.put("restore",new Restore().show(true));
+        feature.put("saveAsImage",new SaveAsImage().show(false));
+        toolbox.setFeature(feature);
+        option.toolbox(toolbox);
+        //calculable
+        option.setCalculable(true);
+        //legend
+        String legend1 = "事故数";
+        String legend2 = "伤亡人数";
+        Legend legend = new Legend();
+        legend.data(legend1,legend2);
+        option.legend(legend);
+        //grid
+//            Grid grid = new Grid();
+//            grid.y2(80);
+//            option.grid(grid);
+        //xAxis
+        List<Axis> xAxis = new ArrayList<Axis>();
+        CategoryAxis categoryAxis = new CategoryAxis();
+        {
+            List xAxisValues = new ArrayList();
+            for(AccidentDied rd:dataList) {
+                xAxisValues.add(rd.getYear());
+            }
+            categoryAxis.setData(xAxisValues);
+        }
+        xAxis.add(categoryAxis);
+        option.xAxis(xAxis);
+        //yAxis
+        List<Axis> yAxis = new ArrayList<Axis>();
+        {
+            ValueAxis valueAxis = new ValueAxis();
+            yAxis.add(valueAxis);
+        }
+        option.yAxis(yAxis);
+        //series
+        List<Series> series = new ArrayList<Series>();
+        {
+            Bar bar = new Bar();
+            bar.name(legend1).type(SeriesType.bar).yAxisIndex(0);
+            List data = new ArrayList();
+            for (AccidentDied value : dataList){
+                data.add(value.getTotal());
+            }
+            bar.setData(data);
+            series.add(bar);
+        }
+        {
+            Line line = new Line();
+            line.name(legend2).type(SeriesType.line).yAxisIndex(0);
+            List data = new ArrayList();
+            for (AccidentDied value : dataList){
+                data.add(value.getSwrs());
+            }
+            line.setData(data);
+            series.add(line);
+        }
+        option.series(series);
+        //
+        return option;
+    }
+
     /**
      * 历年事故分析折线图
      * @return
      */
     public static GsonOption getAccidentAnalysisLineChartOption(List<AccidentAnalysis> dataList) {
-        //http://echarts.baidu.com/echarts2/doc/example/mix1.html
         GsonOption option = new GsonOption();
         //title
         String text = "历年事故分析";
@@ -74,18 +154,13 @@ public class RiskEchartOptionUtil {
         Legend legend = new Legend();
         legend.data(legend1,legend2);
         option.legend(legend);
-        //grid
-//            Grid grid = new Grid();
-//            grid.y2(80);
-//            option.grid(grid);
         //xAxis
         List<Axis> xAxis = new ArrayList<Axis>();
         CategoryAxis categoryAxis = new CategoryAxis();
         {
             List xAxisValues = new ArrayList();
-            for (int i = 1; i <= dataList.size(); i++) {
-                LogUtils.i("年："+dataList.get(i).getYear());
-                xAxisValues.add(dataList.get(i).getYear());
+            for(AccidentAnalysis rd:dataList) {
+                xAxisValues.add(rd.getYear());
             }
             categoryAxis.setData(xAxisValues);
         }
@@ -95,7 +170,6 @@ public class RiskEchartOptionUtil {
         List<Axis> yAxis = new ArrayList<Axis>();
         {
             ValueAxis valueAxis = new ValueAxis();
-            valueAxis.name("人数");
             yAxis.add(valueAxis);
         }
         option.yAxis(yAxis);
@@ -105,8 +179,8 @@ public class RiskEchartOptionUtil {
             Line line = new Line();
             line.name(legend1).type(SeriesType.line).yAxisIndex(0);
             List data = new ArrayList();
-            for (AccidentAnalysis aa : dataList){
-                data.add(aa.getZsrs());
+            for (AccidentAnalysis rd : dataList){
+                data.add(rd.getZsrs());
             }
             line.setData(data);
             series.add(line);
@@ -115,8 +189,8 @@ public class RiskEchartOptionUtil {
             Line line = new Line();
             line.name(legend2).type(SeriesType.line).yAxisIndex(0);
             List data = new ArrayList();
-            for (AccidentAnalysis aa : dataList){
-                data.add(aa.getSwrs());
+            for (AccidentAnalysis rd : dataList){
+                data.add(rd.getSwrs());
             }
             line.setData(data);
             series.add(line);
@@ -256,8 +330,8 @@ public class RiskEchartOptionUtil {
     public static GsonOption getDangerBarChartOption(List<HiddenDanger> dataList) {
         GsonOption option = new GsonOption();
         //title
-        String text = "text";
-        String subText = "subText";
+        String text = "隐患统计";
+        String subText = "";
         option.title(text,subText);
         //tooltip
         Tooltip tooltip = new Tooltip();
@@ -342,8 +416,8 @@ public class RiskEchartOptionUtil {
     public static GsonOption getRiskBarChartOption(List<RiskDanger> dataList) {
         GsonOption option = new GsonOption();
         //title
-        String text = "text";
-        String subText = "subText";
+        String text = "危险源统计";
+        String subText = "";
         option.title(text,subText);
         //tooltip
         Tooltip tooltip = new Tooltip();
@@ -536,9 +610,20 @@ public class RiskEchartOptionUtil {
         categorxAxis.data(xAxis);
         option.xAxis(categorxAxis);
 
+        Object[] x = new Object[]{
+                "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"
+        };
+        Object[] y = new Object[]{
+                800, 902, 981, 930, 1090, 1030, 1020
+        };
+
         Line line = new Line();
         line.smooth(false).name("销量").data(yAxis).itemStyle().normal().lineStyle().shadowColor("rgba(0,0,0,0.4)");
-        option.series(line);
+
+        Line line1 = new Line();
+        line1.smooth(false).name("价格").data(y).itemStyle().normal().lineStyle().shadowColor("rgba(0,0,0,0.4)");
+
+        option.series(line, line1);
         return option;
     }
 }

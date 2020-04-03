@@ -22,24 +22,18 @@
                 android:orientation="vertical">
 
                 <com.jingchengsoft.dzjplatform.feature.home.function.statistic.chart.EchartView
-                    android:id="@+id/accidentPercentPieChart"
+                    android:id="@+id/questionPieChart"
                     android:layout_width="match_parent"
                     android:layout_height="400dp" />
 
                 <com.jingchengsoft.dzjplatform.feature.home.function.statistic.chart.EchartView
-                    android:id="@+id/accidentNumBarChart"
+                    android:id="@+id/healthyPieChart"
                     android:layout_width="match_parent"
                     android:layout_marginTop="20dp"
                     android:layout_height="500dp" />
 
                 <com.jingchengsoft.dzjplatform.feature.home.function.statistic.chart.EchartView
-                    android:id="@+id/accidentAnalysisLineChart"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:layout_height="500dp" />
-
-                <com.jingchengsoft.dzjplatform.feature.home.function.statistic.chart.EchartView
-                    android:id="@+id/accidentDiedLineChart"
+                    android:id="@+id/deviceBarChart"
                     android:layout_width="match_parent"
                     android:layout_marginTop="20dp"
                     android:layout_height="500dp" />
